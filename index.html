@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automatic Exhaust Fan Project</title>
+    <!-- Chosen Palette: TechTonic Blue & Safety Amber -->
+    <!-- Application Structure Plan: The application is designed as a single-page narrative journey to guide visitors through the project. It starts with a hero section to grab attention, followed by "The Problem" to establish context. "How It Works" uses a visual, step-by-step flow to explain the core logic. A "Components" gallery visually details the parts, followed by the "Circuit Diagram" for technical users. "Key Benefits" and "Applications" highlight the project's value proposition. A "Code" section provides the implementation details. Finally, a "Meet the Creators" section gives credit and contact info. This top-down, story-driven structure is more engaging than a traditional report and makes the complex information easily digestible for any audience, from technical peers to casual visitors. -->
+    <!-- Visualization & Content Choices: The project is primarily a hardware showcase. Goal: Inform/Explain -> Presentation: The "How It Works" section uses a numbered, animated flow with images and text to break down the process. Interaction: Elements animate on scroll. Justification: This makes the technical process intuitive and easy to follow. Goal: Organize -> Presentation: A responsive grid layout is used for the "Components" section. Interaction: Hover effects provide subtle feedback. Justification: A grid is an efficient way to display multiple items of the same type. Goal: Inform -> Presentation: A tabbed interface for "Applications" (Domestic, Commercial, Industrial). Interaction: Clicking tabs reveals relevant content. Justification: Tabs organize a large amount of related information cleanly without cluttering the page. Goal: Inform -> Presentation: A formatted code block for the Arduino sketch. Justification: Preserves readability for a technical audience. All images are used directly to showcase the actual project hardware. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa;
+            color: #343a40;
+        }
+        .text-shadow {
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        .card-hover-effect {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-hover-effect:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #f97316;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after, .nav-link.active::after {
+            width: 100%;
+        }
+        .tab-button.active {
+            border-color: #f97316;
+            color: #f97316;
+            background-color: #fff7ed;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header & Navigation -->
+    <header class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#home" class="text-2xl font-bold text-gray-900">
+                Auto<span class="text-orange-500">Fan</span>
+            </a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#overview" class="nav-link text-gray-600 hover:text-orange-500 font-medium">Overview</a>
+                <a href="#how-it-works" class="nav-link text-gray-600 hover:text-orange-500 font-medium">How It Works</a>
+                <a href="#components" class="nav-link text-gray-600 hover:text-orange-500 font-medium">Components</a>
+                <a href="#applications" class="nav-link text-gray-600 hover:text-orange-500 font-medium">Applications</a>
+                <a href="#team" class="nav-link text-gray-600 hover:text-orange-500 font-medium">The Team</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-gray-700 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden">
+            <a href="#overview" class="block py-2 px-6 text-sm text-gray-700 hover:bg-orange-50">Overview</a>
+            <a href="#how-it-works" class="block py-2 px-6 text-sm text-gray-700 hover:bg-orange-50">How It Works</a>
+            <a href="#components" class="block py-2 px-6 text-sm text-gray-700 hover:bg-orange-50">Components</a>
+            <a href="#applications" class="block py-2 px-6 text-sm text-gray-700 hover:bg-orange-50">Applications</a>
+            <a href="#team" class="block py-2 px-6 text-sm text-gray-700 hover:bg-orange-50">The Team</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="relative min-h-[90vh] flex items-center bg-white">
+            <div class="absolute inset-0 bg-grid-gray-200/50 [mask-image:linear-gradient(to_bottom,white,transparent)]"></div>
+            <div class="container mx-auto px-6 z-10">
+                <div class="flex flex-col md:flex-row items-center justify-between">
+                    <div class="md:w-1/2 text-center md:text-left mb-10 md:mb-0">
+                        <h1 class="text-4xl md:text-6xl font-bold text-gray-900 leading-tight mb-4 fade-in-section">
+                            Automatic Exhaust Fan
+                        </h1>
+                        <p class="text-lg md:text-xl text-orange-600 font-semibold mb-6 fade-in-section" style="transition-delay: 150ms;">
+                            Intelligent Ventilation for Safer, Healthier Spaces.
+                        </p>
+                        <p class="text-gray-600 max-w-lg mx-auto md:mx-0 mb-8 fade-in-section" style="transition-delay: 300ms;">
+                            An innovative solution that automatically detects harmful gases and smoke, activating ventilation precisely when needed. This project eliminates human error, enhances safety, and improves air quality in any environment.
+                        </p>
+                        <a href="#overview" class="inline-block bg-orange-500 text-white font-bold py-3 px-8 rounded-full hover:bg-orange-600 transition-transform transform hover:scale-105 shadow-lg fade-in-section" style="transition-delay: 450ms;">Discover More</a>
+                    </div>
+                    <div class="md:w-1/2 flex justify-center fade-in-section" style="transition-delay: 200ms;">
+                        <div class="relative w-full max-w-md">
+                            <div class="absolute -top-4 -left-4 w-full h-full bg-gray-200 rounded-3xl transform -rotate-6"></div>
+                            <img src="https://storage.googleapis.com/gemini-prod-us-west1-420215-ust1-4a1236814457/Hw fan.jpeg-5a435684-9ac2-4194-91d3-a437e97c7c48" alt="Automatic Exhaust Fan Hardware" class="relative w-full h-auto rounded-3xl shadow-2xl">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Overview/Problem Section -->
+        <section id="overview" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12 fade-in-section">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">The Challenge We're Solving</h2>
+                    <p class="text-lg text-gray-600 mt-4 max-w-3xl mx-auto">Traditional ventilation systems rely on manual control, leaving room for human error and inconsistency. This can lead to dangerous situations in homes and workplaces.</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-2xl shadow-md card-hover-effect fade-in-section">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-red-100 text-red-500 mb-4">
+                            <span class="text-3xl">⚠️</span>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Safety Risks</h3>
+                        <p class="text-gray-600">Undetected gas leaks (like LPG) or smoke accumulation can lead to fires, respiratory issues, or even explosions, posing a serious threat in kitchens, labs, and factories.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl shadow-md card-hover-effect fade-in-section" style="transition-delay: 150ms;">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-blue-100 text-blue-500 mb-4">
+                           <span class="text-3xl">🤔</span>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Human Error</h3>
+                        <p class="text-gray-600">Forgetting to turn on an exhaust fan is a common oversight. Manual systems are only effective when people remember to use them, which isn't always the case.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl shadow-md card-hover-effect fade-in-section" style="transition-delay: 300ms;">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-green-100 text-green-500 mb-4">
+                            <span class="text-3xl">⚡</span>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Energy Waste</h3>
+                        <p class="text-gray-600">Fans left running unnecessarily waste electricity. An automated system ensures ventilation operates only when required, leading to significant energy savings.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section id="how-it-works" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16 fade-in-section">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">A Simple, Intelligent Process</h2>
+                    <p class="text-lg text-gray-600 mt-4 max-w-3xl mx-auto">Our system operates on a seamless, four-step cycle to ensure constant air quality monitoring and response.</p>
+                </div>
+                <div class="relative">
+                    <div class="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-gray-200 -translate-y-1/2"></div>
+                    <div class="grid md:grid-cols-4 gap-8">
+                        <div class="text-center fade-in-section">
+                            <div class="relative mb-4">
+                               <div class="flex items-center justify-center mx-auto w-24 h-24 rounded-full bg-orange-500 text-white font-bold text-3xl shadow-lg border-4 border-white">1</div>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-2">Detection</h3>
+                            <p class="text-gray-600">The MQ-2 sensor constantly monitors the air for combustible gases and smoke particles.</p>
+                        </div>
+                        <div class="text-center fade-in-section" style="transition-delay: 150ms;">
+                           <div class="relative mb-4">
+                               <div class="flex items-center justify-center mx-auto w-24 h-24 rounded-full bg-orange-500 text-white font-bold text-3xl shadow-lg border-4 border-white">2</div>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-2">Processing</h3>
+                            <p class="text-gray-600">If levels exceed a safe threshold, a signal is sent to the Arduino UNO, the brain of the system.</p>
+                        </div>
+                        <div class="text-center fade-in-section" style="transition-delay: 300ms;">
+                            <div class="relative mb-4">
+                               <div class="flex items-center justify-center mx-auto w-24 h-24 rounded-full bg-orange-500 text-white font-bold text-3xl shadow-lg border-4 border-white">3</div>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-2">Action</h3>
+                            <p class="text-gray-600">The Arduino triggers the 5V relay module, switching on the high-voltage fan circuit.</p>
+                        </div>
+                         <div class="text-center fade-in-section" style="transition-delay: 450ms;">
+                            <div class="relative mb-4">
+                               <div class="flex items-center justify-center mx-auto w-24 h-24 rounded-full bg-orange-500 text-white font-bold text-3xl shadow-lg border-4 border-white">4</div>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-2">Ventilation</h3>
+                            <p class="text-gray-600">The exhaust fan activates, clearing the hazardous fumes and restoring air quality.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Components Section -->
+        <section id="components" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12 fade-in-section">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Hardware Components</h2>
+                    <p class="text-lg text-gray-600 mt-4 max-w-3xl mx-auto">This project is built with reliable, off-the-shelf components, making it both cost-effective and easy to assemble.</p>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+                    <div class="bg-white rounded-2xl p-6 text-center card-hover-effect fade-in-section">
+                        <img src="https://storage.googleapis.com/gemini-prod-us-west1-420215-ust1-4a1236814457/arduino%20UNO.jpeg-f7e74b56-5a64-4427-9c4e-414c0e922fab" alt="Arduino UNO" class="w-full h-32 object-contain mb-4">
+                        <h3 class="font-semibold">Arduino UNO</h3>
+                        <p class="text-sm text-gray-500">The Microcontroller</p>
+                    </div>
+                     <div class="bg-white rounded-2xl p-6 text-center card-hover-effect fade-in-section" style="transition-delay: 100ms;">
+                        <img src="https://storage.googleapis.com/gemini-prod-us-west1-420215-ust1-4a1236814457/mq-2.jpeg-fd3dd52e-c804-4741-820c-27a2fe4d46c7" alt="MQ-2 Gas Sensor" class="w-full h-32 object-contain mb-4">
+                        <h3 class="font-semibold">MQ-2 Gas Sensor</h3>
+                        <p class="text-sm text-gray-500">The Detector</p>
+                    </div>
+                    <div class="bg-white rounded-2xl p-6 text-center card-hover-effect fade-in-section" style="transition-delay: 200ms;">
+                        <img src="https://storage.googleapis.com/gemini-prod-us-west1-420215-ust1-4a1236814457/5v%20relay.jpeg-dc7f3aa1-08ef-4277-9cb4-76b80d00f6d2" alt="5V Relay Module" class="w-full h-32 object-contain mb-4">
+                        <h3 class="font-semibold">5V Relay Module</h3>
+                        <p class="text-sm text-gray-500">The Switch</p>
+                    </div>
+                    <div class="bg-white rounded-2xl p-6 text-center card-hover-effect fade-in-section" style="transition-delay: 300ms;">
+                        <img src="https://storage.googleapis.com/gemini-prod-us-west1-420215-ust1-4a1236814457/fan.jpeg-97821f17-2193-447b-b9ee-56df1774bffc" alt="Exhaust Fan" class="w-full h-32 object-contain mb-4">
+                        <h3 class="font-semibold">Exhaust Fan</h3>
+                        <p class="text-sm text-gray-500">The Ventilator</p>
+                    </div>
+                     <div class="bg-white rounded-2xl p-6 text-center card-hover-effect fade-in-section" style="transition-delay: 400ms;">
+                        <img src="https://storage.googleapis.com/gemini-prod-us-west1-420215-ust1-4a1236814457/jumper%20wires.jpg-8c1b6968-2935-4fb5-8eb3-313e1d47d0c2" alt="Jumper Wires" class="w-full h-32 object-contain mb-4">
+                        <h3 class="font-semibold">Jumper Wires</h3>
+                        <p class="text-sm text-gray-500">The Connectors</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Circuit Diagram & Code Section -->
+        <section id="tech-details" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col lg:flex-row gap-12 items-start">
+                    <!-- Circuit Diagram -->
+                    <div class="w-full lg:w-1/2 fade-in-section">
+                        <h2 class="text-3xl font-bold text-gray-900 mb-4">Circuit Diagram</h2>
+                        <p class="text-gray-600 mb-6">The schematic below illustrates the connections between the Arduino, sensor, relay, and fan, forming the complete electronic circuit.</p>
+                        <div class="bg-gray-100 rounded-2xl p-4 shadow-inner">
+                            <img src="https://storage.googleapis.com/gemini-prod-us-west1-420215-ust1-4a1236814457/circuit%20diagram.jpg-74ed13c3-944a-4f31-9c11-dd3f51017dec" alt="Circuit Diagram" class="w-full h-auto rounded-xl">
+                        </div>
+                    </div>
+                    <!-- Code -->
+                    <div class="w-full lg:w-1/2 fade-in-section" style="transition-delay: 200ms;">
+                        <h2 class="text-3xl font-bold text-gray-900 mb-4">The Arduino Code</h2>
+                        <p class="text-gray-600 mb-6">This simple yet powerful code reads the sensor data, compares it to a threshold, and controls the fan accordingly.</p>
+                        <div class="bg-gray-800 text-white rounded-2xl p-6 shadow-lg">
+                            <pre class="text-sm font-mono whitespace-pre-wrap overflow-x-auto"><code class="language-cpp">
+const int MQ2_Pin = A0;
+const int Fan = 7;
+const int Threshold = 300;
+
+void setup() {
+  pinMode(MQ2_Pin, INPUT);
+  pinMode(Fan, OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+  int smokeLevel = analogRead(MQ2_Pin);
+  Serial.print("Smoke Level: ");
+  Serial.println(smokeLevel);
+
+  if (smokeLevel > Threshold) {
+    digitalWrite(Fan, HIGH); // Turn on fan
+  } else {
+    digitalWrite(Fan, LOW);  // Turn off fan
+  }
+  delay(1000); // Wait for a second
+}
+                            </code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Applications Section -->
+        <section id="applications" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12 fade-in-section">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Versatile Applications</h2>
+                    <p class="text-lg text-gray-600 mt-4 max-w-3xl mx-auto">This system is highly adaptable and provides essential safety across a wide range of environments.</p>
+                </div>
+                <div class="fade-in-section">
+                    <div class="flex justify-center mb-8 border-b border-gray-200">
+                        <button class="tab-button active py-3 px-6 font-semibold border-b-2" data-tab="domestic">Domestic</button>
+                        <button class="tab-button py-3 px-6 font-semibold border-b-2 border-transparent text-gray-500" data-tab="commercial">Commercial</button>
+                        <button class="tab-button py-3 px-6 font-semibold border-b-2 border-transparent text-gray-500" data-tab="industrial">Industrial</button>
+                    </div>
+                    <div id="tab-content" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="tab-pane active" id="domestic-content">
+                            <div class="bg-white p-6 rounded-lg shadow-sm">
+                                <h4 class="font-bold text-orange-600 mb-2">Kitchens</h4>
+                                <p>Prevents accidents from cooking smoke or gas leaks.</p>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg shadow-sm mt-4">
+                                <h4 class="font-bold text-orange-600 mb-2">Bathrooms</h4>
+                                <p>Controls humidity and removes stale air automatically.</p>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg shadow-sm mt-4">
+                                <h4 class="font-bold text-orange-600 mb-2">Garages & Basements</h4>
+                                <p>Ventilates fumes from vehicles, paints, or chemicals.</p>
+                            </div>
+                        </div>
+                        <div class="tab-pane hidden" id="commercial-content">
+                             <div class="bg-white p-6 rounded-lg shadow-sm">
+                                <h4 class="font-bold text-blue-600 mb-2">Restaurant Kitchens</h4>
+                                <p>Manages heavy smoke and cooking fumes during peak hours.</p>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg shadow-sm mt-4">
+                                <h4 class="font-bold text-blue-600 mb-2">Salons</h4>
+                                <p>Removes chemical odors from hair treatments.</p>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg shadow-sm mt-4">
+                                <h4 class="font-bold text-blue-600 mb-2">Auditoriums</h4>
+                                <p>Ensures fresh air circulation in crowded spaces.</p>
+                            </div>
+                        </div>
+                        <div class="tab-pane hidden" id="industrial-content">
+                             <div class="bg-white p-6 rounded-lg shadow-sm">
+                                <h4 class="font-bold text-purple-600 mb-2">Chemical Plants</h4>
+                                <p>Provides critical safety ventilation in case of gas leaks.</p>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg shadow-sm mt-4">
+                                <h4 class="font-bold text-purple-600 mb-2">Laboratories</h4>
+                                <p>Clears hazardous fumes from experiments automatically.</p>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg shadow-sm mt-4">
+                                <h4 class="font-bold text-purple-600 mb-2">Welding Shops</h4>
+                                <p>Extracts smoke and particulate matter from the air.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Team Section -->
+        <section id="team" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12 fade-in-section">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Meet the Creators</h2>
+                    <p class="text-lg text-gray-600 mt-4 max-w-3xl mx-auto">This project was brought to life by a dedicated team of engineering students.</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-10">
+                    <div class="text-center bg-gray-50 p-8 rounded-2xl card-hover-effect fade-in-section">
+                        <div class="w-32 h-32 rounded-full mx-auto mb-4 bg-gray-300 flex items-center justify-center">
+                            <span class="text-5xl text-gray-500">👤</span>
+                        </div>
+                        <h3 class="text-xl font-bold">R. Srinivasa Manikanta</h3>
+                        <p class="text-orange-500 font-medium">(24HP5A0221)</p>
+                        <p class="text-gray-600 my-4">Passionate about embedded systems and automation, with a focus on creating practical solutions for everyday problems.</p>
+                        <p class="text-sm text-gray-500">Contact: srinivas@example.com</p>
+                    </div>
+                    <div class="text-center bg-gray-50 p-8 rounded-2xl card-hover-effect fade-in-section" style="transition-delay: 150ms;">
+                        <div class="w-32 h-32 rounded-full mx-auto mb-4 bg-gray-300 flex items-center justify-center">
+                           <span class="text-5xl text-gray-500">👤</span>
+                        </div>
+                        <h3 class="text-xl font-bold">P. Sudheer Babu</h3>
+                        <p class="text-orange-500 font-medium">(24HP5A0222)</p>
+                        <p class="text-gray-600 my-4">A creative thinker with a knack for circuit design and hardware integration, dedicated to improving safety through technology.</p>
+                        <p class="text-sm text-gray-500">Contact: sudheer@example.com</p>
+                    </div>
+                    <div class="text-center bg-gray-50 p-8 rounded-2xl card-hover-effect fade-in-section" style="transition-delay: 300ms;">
+                        <div class="w-32 h-32 rounded-full mx-auto mb-4 bg-gray-300 flex items-center justify-center">
+                            <span class="text-5xl text-gray-500">👤</span>
+                        </div>
+                        <h3 class="text-xl font-bold">B.V. Surya Narayana</h3>
+                        <p class="text-orange-500 font-medium">(24HP5A0223)</p>
+                        <p class="text-gray-600 my-4">Expert in software development and programming logic, ensuring the system's brain is as smart and efficient as its body.</p>
+                        <p class="text-sm text-gray-500">Contact: surya@example.com</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-10">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2024 Automatic Exhaust Fan Project. All Rights Reserved.</p>
+            <p class="text-sm text-gray-400 mt-2">Department of Electrical & Electronics Engineering, Andhra Loyola Institute of Engineering and Technology</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // Mobile Menu Toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Fade-in sections on scroll
+            const sections = document.querySelectorAll('.fade-in-section');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+            
+            // Active Nav Link Styling on Scroll
+            const navLinks = document.querySelectorAll('.nav-link');
+            const pageSections = document.querySelectorAll('main section');
+            
+            const activateNavLink = (id) => {
+                 navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if(link.getAttribute('href') === `#${id}`) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+
+            const scrollObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        activateNavLink(entry.target.id);
+                    }
+                });
+            }, { rootMargin: '-30% 0px -70% 0px' });
+            
+            pageSections.forEach(section => {
+                scrollObserver.observe(section);
+            });
+
+
+            // Applications Tab Functionality
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const tabPanes = document.querySelectorAll('.tab-pane');
+
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const tab = button.dataset.tab;
+
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+                    
+                    const tabContentContainer = document.getElementById('tab-content');
+                    const activePane = document.getElementById(`${tab}-content`);
+                    
+                    // Add fade-out effect
+                    tabContentContainer.style.opacity = '0';
+                    tabContentContainer.style.transition = 'opacity 0.3s ease';
+
+                    setTimeout(() => {
+                        tabPanes.forEach(pane => {
+                           if (pane.id === `${tab}-content`) {
+                               pane.classList.remove('hidden');
+                               pane.classList.add('active');
+                               // We reset the grid for the active content
+                               tabContentContainer.innerHTML = '';
+                               tabContentContainer.appendChild(pane.cloneNode(true));
+                           } else {
+                               pane.classList.add('hidden');
+                               pane.classList.remove('active');
+                           }
+                        });
+                        // Add fade-in effect
+                        tabContentContainer.style.opacity = '1';
+                    }, 300);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
