@@ -4,10 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Automatic Exhaust Fan Project</title>
-    <!-- Chosen Palette: TechTonic Blue & Safety Amber -->
-    <!-- Application Structure Plan: The application is designed as a single-page narrative journey to guide visitors through the project. It starts with a hero section to grab attention, followed by "The Problem" to establish context. "How It Works" uses a visual, step-by-step flow to explain the core logic. A "Components" gallery visually details the parts, followed by the "Circuit Diagram" for technical users. "Key Benefits" and "Applications" highlight the project's value proposition. A "Code" section provides the implementation details. Finally, a "Meet the Creators" section gives credit and contact info. This top-down, story-driven structure is more engaging than a traditional report and makes the complex information easily digestible for any audience, from technical peers to casual visitors. -->
-    <!-- Visualization & Content Choices: The project is primarily a hardware showcase. Goal: Inform/Explain -> Presentation: The "How It Works" section uses a numbered, animated flow with images and text to break down the process. Interaction: Elements animate on scroll. Justification: This makes the technical process intuitive and easy to follow. Goal: Organize -> Presentation: A responsive grid layout is used for the "Components" section. Interaction: Hover effects provide subtle feedback. Justification: A grid is an efficient way to display multiple items of the same type. Goal: Inform -> Presentation: A tabbed interface for "Applications" (Domestic, Commercial, Industrial). Interaction: Clicking tabs reveals relevant content. Justification: Tabs organize a large amount of related information cleanly without cluttering the page. Goal: Inform -> Presentation: A formatted code block for the Arduino sketch. Justification: Preserves readability for a technical audience. All images are used directly to showcase the actual project hardware. -->
-    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -63,8 +59,7 @@
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
-
-    <!-- Header & Navigation -->
+    <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js" type="module"></script>
     <header class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 shadow-sm">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#home" class="text-2xl font-bold text-gray-900">
@@ -90,9 +85,7 @@
         </div>
     </header>
 
-    <!-- Main Content -->
     <main>
-        <!-- Hero Section -->
         <section id="home" class="relative min-h-[90vh] flex items-center bg-white">
             <div class="absolute inset-0 bg-grid-gray-200/50 [mask-image:linear-gradient(to_bottom,white,transparent)]"></div>
             <div class="container mx-auto px-6 z-10">
@@ -110,16 +103,12 @@
                         <a href="#overview" class="inline-block bg-orange-500 text-white font-bold py-3 px-8 rounded-full hover:bg-orange-600 transition-transform transform hover:scale-105 shadow-lg fade-in-section" style="transition-delay: 450ms;">Discover More</a>
                     </div>
                     <div class="md:w-1/2 flex justify-center fade-in-section" style="transition-delay: 200ms;">
-                        <div class="relative w-full max-w-md">
-                            <div class="absolute -top-4 -left-4 w-full h-full bg-white-200 rounded-3xl transform -rotate-6"></div>
-                            <img src="arduino UNO.jpeg">
-                        </div>
+                        <dotlottie-wc src="https://lottie.host/000df5d6-40fd-4de8-89d0-66feb491f3c1/YHchUrQY9G.lottie" style="width: 300px;height: 300px" speed="1" autoplay loop></dotlottie-wc>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Overview/Problem Section -->
         <section id="overview" class="py-20 bg-gray-50">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12 fade-in-section">
@@ -152,7 +141,6 @@
             </div>
         </section>
 
-        <!-- How It Works Section -->
         <section id="how-it-works" class="py-20 bg-white">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16 fade-in-section">
@@ -195,7 +183,6 @@
             </div>
         </section>
 
-        <!-- Components Section -->
         <section id="components" class="py-20 bg-gray-50">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12 fade-in-section">
@@ -232,11 +219,9 @@
             </div>
         </section>
 
-        <!-- Circuit Diagram & Code Section -->
         <section id="tech-details" class="py-20 bg-white">
             <div class="container mx-auto px-6">
                 <div class="flex flex-col lg:flex-row gap-12 items-start">
-                    <!-- Circuit Diagram -->
                     <div class="w-full lg:w-1/2 fade-in-section">
                         <h2 class="text-3xl font-bold text-gray-900 mb-4">Circuit Diagram</h2>
                         <p class="text-gray-600 mb-6">The schematic below illustrates the connections between the Arduino, sensor, relay, and fan, forming the complete electronic circuit.</p>
@@ -244,7 +229,6 @@
                             <img src="circuit diagram.jpg">
                         </div>
                     </div>
-                    <!-- Code -->
                     <div class="w-full lg:w-1/2 fade-in-section" style="transition-delay: 200ms;">
                         <h2 class="text-3xl font-bold text-gray-900 mb-4">The Arduino Code</h2>
                         <p class="text-gray-600 mb-6">This simple yet powerful code reads the sensor data, compares it to a threshold, and controls the fan accordingly.</p>
@@ -279,7 +263,6 @@ void loop() {
             </div>
         </section>
 
-        <!-- Applications Section -->
         <section id="applications" class="py-20 bg-gray-50">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12 fade-in-section">
@@ -340,7 +323,6 @@ void loop() {
             </div>
         </section>
 
-        <!-- The Team Section -->
         <section id="team" class="py-20 bg-white">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12 fade-in-section">
@@ -373,7 +355,7 @@ void loop() {
                         <h3 class="text-xl font-bold">B.V. Surya Narayana</h3>
                         <p class="text-orange-500 font-medium">(24HP5A0223)</p>
                         <p class="text-gray-600 my-4">Expert in software development and programming logic, ensuring the system's brain is as smart and efficient as its body.</p>
-                        <p class="text-sm text-gray-500">Contact: surya@example.com</p>
+                        <p class="text-sm text-gray-500">Contact: venkatasuryabolisetti4@gmail.com</p>
                     </div>
                 </div>
             </div>
@@ -381,11 +363,10 @@ void loop() {
 
     </main>
     
-    <!-- Footer -->
     <footer class="bg-gray-800 text-white py-10">
         <div class="container mx-auto px-6 text-center">
-            <p>&copy; 2024 Automatic Exhaust Fan Project. All Rights Reserved.</p>
-            <p class="text-sm text-gray-400 mt-2">Department of Electrical & Electronics Engineering, Andhra Loyola Institute of Engineering and Technology</p>
+            <p>&copy; 2025 Automatic Exhaust Fan Project. All Rights Reserved.</p>
+            <p class="text-sm text-gray-400 mt-2">Department of Electrical & Electronics Engineering, ALIET</p>
         </div>
     </footer>
 
