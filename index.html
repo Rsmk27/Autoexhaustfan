@@ -59,7 +59,10 @@
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
+    <!-- Load Lottie Library for animations -->
     <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js" type="module"></script>
+    
+    <!-- Navigation Header -->
     <header class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 shadow-sm">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#home" class="text-2xl font-bold text-gray-900">
@@ -69,6 +72,7 @@
                 <a href="#overview" class="nav-link text-gray-600 hover:text-orange-500 font-medium">Overview</a>
                 <a href="#how-it-works" class="nav-link text-gray-600 hover:text-orange-500 font-medium">How It Works</a>
                 <a href="#components" class="nav-link text-gray-600 hover:text-orange-500 font-medium">Components</a>
+                <a href="#embedded-circuit" class="nav-link text-gray-600 hover:text-orange-500 font-medium">Circuit</a>
                 <a href="#applications" class="nav-link text-gray-600 hover:text-orange-500 font-medium">Applications</a>
                 <a href="#team" class="nav-link text-gray-600 hover:text-orange-500 font-medium">The Team</a>
             </div>
@@ -80,12 +84,14 @@
             <a href="#overview" class="block py-2 px-6 text-sm text-gray-700 hover:bg-orange-50">Overview</a>
             <a href="#how-it-works" class="block py-2 px-6 text-sm text-gray-700 hover:bg-orange-50">How It Works</a>
             <a href="#components" class="block py-2 px-6 text-sm text-gray-700 hover:bg-orange-50">Components</a>
+            <a href="#embedded-circuit" class="block py-2 px-6 text-sm text-gray-700 hover:bg-orange-50">Circuit</a>
             <a href="#applications" class="block py-2 px-6 text-sm text-gray-700 hover:bg-orange-50">Applications</a>
             <a href="#team" class="block py-2 px-6 text-sm text-gray-700 hover:bg-orange-50">The Team</a>
         </div>
     </header>
 
     <main>
+        <!-- Home/Hero Section -->
         <section id="home" class="relative min-h-[90vh] flex items-center bg-white">
             <div class="absolute inset-0 bg-grid-gray-200/50 [mask-image:linear-gradient(to_bottom,white,transparent)]"></div>
             <div class="container mx-auto px-6 z-10">
@@ -103,12 +109,14 @@
                         <a href="#overview" class="inline-block bg-orange-500 text-white font-bold py-3 px-8 rounded-full hover:bg-orange-600 transition-transform transform hover:scale-105 shadow-lg fade-in-section" style="transition-delay: 450ms;">Discover More</a>
                     </div>
                     <div class="md:w-1/2 flex justify-center fade-in-section" style="transition-delay: 200ms;">
+                        <!-- Lottie Animation for visual appeal -->
                         <dotlottie-wc src="https://lottie.host/000df5d6-40fd-4de8-89d0-66feb491f3c1/YHchUrQY9G.lottie" style="width: 300px;height: 300px" speed="1" autoplay loop></dotlottie-wc>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- Overview/Problem Section -->
         <section id="overview" class="py-20 bg-gray-50">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12 fade-in-section">
@@ -141,6 +149,7 @@
             </div>
         </section>
 
+        <!-- How It Works Section -->
         <section id="how-it-works" class="py-20 bg-white">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16 fade-in-section">
@@ -171,7 +180,7 @@
                             <h3 class="text-xl font-semibold mb-2">Action</h3>
                             <p class="text-gray-600">The Arduino triggers the 5V relay module, switching on the high-voltage fan circuit.</p>
                         </div>
-                         <div class="text-center fade-in-section" style="transition-delay: 450ms;">
+                           <div class="text-center fade-in-section" style="transition-delay: 450ms;">
                             <div class="relative mb-4">
                                <div class="flex items-center justify-center mx-auto w-24 h-24 rounded-full bg-orange-500 text-white font-bold text-3xl shadow-lg border-4 border-white">4</div>
                             </div>
@@ -183,6 +192,7 @@
             </div>
         </section>
 
+        <!-- Components Section -->
         <section id="components" class="py-20 bg-gray-50">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12 fade-in-section">
@@ -191,27 +201,28 @@
                 </div>
                 <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
                     <div class="bg-white rounded-2xl p-6 text-center card-hover-effect fade-in-section">
-                        <img src="arduino UNO.jpeg">
+                        <!-- Added onerror for image fallback -->
+                        <img src="arduino UNO.jpeg" alt="Arduino UNO" class="mx-auto mb-4 w-32 h-32 object-contain" onerror="this.onerror=null; this.src='https://placehold.co/128x128/f3f4f6/9ca3af?text=Arduino'">
                         <h3 class="font-semibold">Arduino UNO</h3>
                         <p class="text-sm text-gray-500">The Microcontroller</p>
                     </div>
-                     <div class="bg-white rounded-2xl p-6 text-center card-hover-effect fade-in-section" style="transition-delay: 100ms;">
-                        <img src="mq-2.jpeg">
+                       <div class="bg-white rounded-2xl p-6 text-center card-hover-effect fade-in-section" style="transition-delay: 100ms;">
+                        <img src="mq-2.jpeg" alt="MQ-2 Gas Sensor" class="mx-auto mb-4 w-32 h-32 object-contain" onerror="this.onerror=null; this.src='https://placehold.co/128x128/f3f4f6/9ca3af?text=Sensor'">
                         <h3 class="font-semibold">MQ-2 Gas Sensor</h3>
                         <p class="text-sm text-gray-500">The Detector</p>
                     </div>
                     <div class="bg-white rounded-2xl p-6 text-center card-hover-effect fade-in-section" style="transition-delay: 200ms;">
-                        <img src="5v relay.jpeg">
+                        <img src="5v relay.jpeg" alt="5V Relay Module" class="mx-auto mb-4 w-32 h-32 object-contain" onerror="this.onerror=null; this.src='https://placehold.co/128x128/f3f4f6/9ca3af?text=Relay'">
                         <h3 class="font-semibold">5V Relay Module</h3>
                         <p class="text-sm text-gray-500">The Switch</p>
                     </div>
                     <div class="bg-white rounded-2xl p-6 text-center card-hover-effect fade-in-section" style="transition-delay: 300ms;">
-                        <img src="fan.jpeg">
+                        <img src="fan.jpeg" alt="Exhaust Fan" class="mx-auto mb-4 w-32 h-32 object-contain" onerror="this.onerror=null; this.src='https://placehold.co/128x128/f3f4f6/9ca3af?text=Fan'">
                         <h3 class="font-semibold">Exhaust Fan</h3>
                         <p class="text-sm text-gray-500">The Ventilator</p>
                     </div>
-                     <div class="bg-white rounded-2xl p-6 text-center card-hover-effect fade-in-section" style="transition-delay: 400ms;">
-                        <img src="jumper wires.jpeg">
+                       <div class="bg-white rounded-2xl p-6 text-center card-hover-effect fade-in-section" style="transition-delay: 400ms;">
+                        <img src="jumper wires.jpeg" alt="Jumper Wires" class="mx-auto mb-4 w-32 h-32 object-contain" onerror="this.onerror=null; this.src='https://placehold.co/128x128/f3f4f6/9ca3af?text=Wires'">
                         <h3 class="font-semibold">Jumper Wires</h3>
                         <p class="text-sm text-gray-500">The Connectors</p>
                     </div>
@@ -219,6 +230,7 @@
             </div>
         </section>
 
+        <!-- Tech Details Section (Circuit Diagram + Code) -->
         <section id="tech-details" class="py-20 bg-white">
             <div class="container mx-auto px-6">
                 <div class="flex flex-col lg:flex-row gap-12 items-start">
@@ -226,7 +238,7 @@
                         <h2 class="text-3xl font-bold text-gray-900 mb-4">Circuit Diagram</h2>
                         <p class="text-gray-600 mb-6">The schematic below illustrates the connections between the Arduino, sensor, relay, and fan, forming the complete electronic circuit.</p>
                         <div class="bg-gray-100 rounded-2xl p-4 shadow-inner">
-                            <img src="circuit diagram.jpg">
+                            <img src="circuit diagram.jpg" alt="Static Circuit Diagram" class="w-full h-auto object-contain" onerror="this.onerror=null; this.src='https://placehold.co/600x400/f3f4f6/9ca3af?text=Circuit+Diagram+Placeholder'">
                         </div>
                     </div>
                     <div class="w-full lg:w-1/2 fade-in-section" style="transition-delay: 200ms;">
@@ -263,6 +275,29 @@ void loop() {
             </div>
         </section>
 
+        <!-- NEW: Embedded Circuit Simulation Section -->
+        <section id="embedded-circuit" class="py-20 bg-gray-100">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12 fade-in-section">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Interactive Circuit Simulation</h2>
+                    <p class="text-lg text-gray-600 mt-4 max-w-3xl mx-auto">Explore the working circuit in a real-time, interactive simulator below. You can test the smoke/gas sensor interaction!</p>
+                </div>
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden fade-in-section">
+                    <!-- User provided iframe content, wrapped for responsive aspect ratio -->
+                    <div style="position: relative; width: 100%; padding-top: calc(max(56.25%, 400px));">
+                        <iframe 
+                            src="https://app.cirkitdesigner.com/project/cda45517-128c-4778-9c26-31509162e41e?view=interactive_preview" 
+                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; min-height: 400px;"
+                            allowfullscreen 
+                            loading="lazy"
+                            title="Interactive Embedded Circuit Simulation">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Applications Section (Bug Fixed) -->
         <section id="applications" class="py-20 bg-gray-50">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12 fade-in-section">
@@ -275,54 +310,64 @@ void loop() {
                         <button class="tab-button py-3 px-6 font-semibold border-b-2 border-transparent text-gray-500" data-tab="commercial">Commercial</button>
                         <button class="tab-button py-3 px-6 font-semibold border-b-2 border-transparent text-gray-500" data-tab="industrial">Industrial</button>
                     </div>
-                    <div id="tab-content" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        <div class="tab-pane active" id="domestic-content">
-                            <div class="bg-white p-6 rounded-lg shadow-sm">
+                    
+                    <!-- Content panes (Removed ID from outer div and applied grid/hidden directly to panes) -->
+                    <div class="min-h-[300px] relative">
+                        
+                        <!-- Domestic Pane (Default active) -->
+                        <div class="tab-pane grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="domestic-content">
+                            <div class="bg-white p-6 rounded-lg shadow-md card-hover-effect">
                                 <h4 class="font-bold text-orange-600 mb-2">Kitchens</h4>
                                 <p>Prevents accidents from cooking smoke or gas leaks.</p>
                             </div>
-                            <div class="bg-white p-6 rounded-lg shadow-sm mt-4">
+                            <div class="bg-white p-6 rounded-lg shadow-md card-hover-effect">
                                 <h4 class="font-bold text-orange-600 mb-2">Bathrooms</h4>
                                 <p>Controls humidity and removes stale air automatically.</p>
                             </div>
-                            <div class="bg-white p-6 rounded-lg shadow-sm mt-4">
+                            <div class="bg-white p-6 rounded-lg shadow-md card-hover-effect">
                                 <h4 class="font-bold text-orange-600 mb-2">Garages & Basements</h4>
                                 <p>Ventilates fumes from vehicles, paints, or chemicals.</p>
                             </div>
                         </div>
-                        <div class="tab-pane hidden" id="commercial-content">
-                             <div class="bg-white p-6 rounded-lg shadow-sm">
-                                <h4 class="font-bold text-blue-600 mb-2">Restaurant Kitchens</h4>
-                                <p>Manages heavy smoke and cooking fumes during peak hours.</p>
-                            </div>
-                            <div class="bg-white p-6 rounded-lg shadow-sm mt-4">
-                                <h4 class="font-bold text-blue-600 mb-2">Salons</h4>
-                                <p>Removes chemical odors from hair treatments.</p>
-                            </div>
-                            <div class="bg-white p-6 rounded-lg shadow-sm mt-4">
-                                <h4 class="font-bold text-blue-600 mb-2">Auditoriums</h4>
-                                <p>Ensures fresh air circulation in crowded spaces.</p>
-                            </div>
+                        
+                        <!-- Commercial Pane -->
+                        <div class="tab-pane grid md:grid-cols-2 lg:grid-cols-3 gap-8 hidden" id="commercial-content">
+                             <div class="bg-white p-6 rounded-lg shadow-md card-hover-effect">
+                                 <h4 class="font-bold text-blue-600 mb-2">Restaurant Kitchens</h4>
+                                 <p>Manages heavy smoke and cooking fumes during peak hours.</p>
+                             </div>
+                             <div class="bg-white p-6 rounded-lg shadow-md card-hover-effect">
+                                 <h4 class="font-bold text-blue-600 mb-2">Salons</h4>
+                                 <p>Removes chemical odors from hair treatments.</p>
+                             </div>
+                             <div class="bg-white p-6 rounded-lg shadow-md card-hover-effect">
+                                 <h4 class="font-bold text-blue-600 mb-2">Auditoriums</h4>
+                                 <p>Ensures fresh air circulation in crowded spaces.</p>
+                             </div>
                         </div>
-                        <div class="tab-pane hidden" id="industrial-content">
-                             <div class="bg-white p-6 rounded-lg shadow-sm">
-                                <h4 class="font-bold text-purple-600 mb-2">Chemical Plants</h4>
-                                <p>Provides critical safety ventilation in case of gas leaks.</p>
-                            </div>
-                            <div class="bg-white p-6 rounded-lg shadow-sm mt-4">
-                                <h4 class="font-bold text-purple-600 mb-2">Laboratories</h4>
-                                <p>Clears hazardous fumes from experiments automatically.</p>
-                            </div>
-                            <div class="bg-white p-6 rounded-lg shadow-sm mt-4">
-                                <h4 class="font-bold text-purple-600 mb-2">Welding Shops</h4>
-                                <p>Extracts smoke and particulate matter from the air.</p>
-                            </div>
+                        
+                        <!-- Industrial Pane -->
+                        <div class="tab-pane grid md:grid-cols-2 lg:grid-cols-3 gap-8 hidden" id="industrial-content">
+                             <div class="bg-white p-6 rounded-lg shadow-md card-hover-effect">
+                                 <h4 class="font-bold text-purple-600 mb-2">Chemical Plants</h4>
+                                 <p>Provides critical safety ventilation in case of gas leaks.</p>
+                             </div>
+                             <div class="bg-white p-6 rounded-lg shadow-md card-hover-effect">
+                                 <h4 class="font-bold text-purple-600 mb-2">Laboratories</h4>
+                                 <p>Clears hazardous fumes from experiments automatically.</p>
+                             </div>
+                             <div class="bg-white p-6 rounded-lg shadow-md card-hover-effect">
+                                 <h4 class="font-bold text-purple-600 mb-2">Welding Shops</h4>
+                                 <p>Extracts smoke and particulate matter from the air.</p>
+                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- Team Section -->
         <section id="team" class="py-20 bg-white">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12 fade-in-section">
@@ -363,6 +408,7 @@ void loop() {
 
     </main>
     
+    <!-- Footer -->
     <footer class="bg-gray-800 text-white py-10">
         <div class="container mx-auto px-6 text-center">
             <p>&copy; 2025 Automatic Exhaust Fan Project. All Rights Reserved.</p>
@@ -370,6 +416,7 @@ void loop() {
         </div>
     </footer>
 
+    <!-- JavaScript -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
 
@@ -396,6 +443,7 @@ void loop() {
             
             // Active Nav Link Styling on Scroll
             const navLinks = document.querySelectorAll('.nav-link');
+            // Updated to include the new section
             const pageSections = document.querySelectorAll('main section');
             
             const activateNavLink = (id) => {
@@ -420,7 +468,7 @@ void loop() {
             });
 
 
-            // Applications Tab Functionality
+            // Applications Tab Functionality - CORRECTED LOGIC
             const tabButtons = document.querySelectorAll('.tab-button');
             const tabPanes = document.querySelectorAll('.tab-pane');
 
@@ -428,34 +476,36 @@ void loop() {
                 button.addEventListener('click', () => {
                     const tab = button.dataset.tab;
 
+                    // 1. Update button style (Deactivate all, Activate clicked)
                     tabButtons.forEach(btn => btn.classList.remove('active'));
                     button.classList.add('active');
-                    
-                    const tabContentContainer = document.getElementById('tab-content');
-                    const activePane = document.getElementById(`${tab}-content`);
-                    
-                    // Add fade-out effect
-                    tabContentContainer.style.opacity = '0';
-                    tabContentContainer.style.transition = 'opacity 0.3s ease';
 
-                    setTimeout(() => {
-                        tabPanes.forEach(pane => {
-                           if (pane.id === `${tab}-content`) {
-                               pane.classList.remove('hidden');
-                               pane.classList.add('active');
-                               // We reset the grid for the active content
-                               tabContentContainer.innerHTML = '';
-                               tabContentContainer.appendChild(pane.cloneNode(true));
-                           } else {
-                               pane.classList.add('hidden');
-                               pane.classList.remove('active');
-                           }
-                        });
-                        // Add fade-in effect
-                        tabContentContainer.style.opacity = '1';
-                    }, 300);
+                    // 2. Update content visibility (Hide all, Show target)
+                    tabPanes.forEach(pane => {
+                        if (pane.id === `${tab}-content`) {
+                            // Show target pane
+                            pane.classList.remove('hidden');
+                        } else {
+                            // Hide other panes
+                            pane.classList.add('hidden');
+                        }
+                    });
                 });
             });
+            
+            // Initialize the component image fallbacks immediately (for local images)
+            document.querySelectorAll('#components img').forEach(img => {
+                if (img.src.includes('.jpeg') || img.src.includes('.jpg')) {
+                    img.onerror = function() {
+                        const altText = img.alt || 'Image';
+                        const placeholderText = encodeURIComponent(altText.replace(/\s/g, '+'));
+                        img.src = `https://placehold.co/128x128/f3f4f6/9ca3af?text=${placeholderText}`;
+                        img.classList.remove('w-32', 'h-32');
+                        img.classList.add('w-24', 'h-24'); 
+                    };
+                }
+            });
+
         });
     </script>
 </body>
