@@ -297,7 +297,7 @@ void loop() {
             </div>
         </section>
 
-        <!-- Applications Section (Bug Fixed) -->
+        <!-- Applications Section -->
         <section id="applications" class="py-20 bg-gray-50">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12 fade-in-section">
@@ -311,7 +311,6 @@ void loop() {
                         <button class="tab-button py-3 px-6 font-semibold border-b-2 border-transparent text-gray-500" data-tab="industrial">Industrial</button>
                     </div>
                     
-                    <!-- Content panes (Removed ID from outer div and applied grid/hidden directly to panes) -->
                     <div class="min-h-[300px] relative">
                         
                         <!-- Domestic Pane (Default active) -->
@@ -376,27 +375,21 @@ void loop() {
                 </div>
                 <div class="grid md:grid-cols-3 gap-10">
                     <div class="text-center bg-gray-50 p-8 rounded-2xl card-hover-effect fade-in-section">
-                        <div class="w-32 h-32 rounded-full mx-auto mb-4 bg-gray-300 flex items-center justify-center">
-                            <span class="text-5xl text-gray-500">👤</span>
-                        </div>
+                        <img src="Rsmk.ong" alt="R. Srinivasa Manikanta" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover border-4 border-white shadow-sm">
                         <h3 class="text-xl font-bold">R. Srinivasa Manikanta</h3>
                         <p class="text-orange-500 font-medium">(24HP5A0221)</p>
                         <p class="text-gray-600 my-4">Passionate about embedded systems and automation, with a focus on creating practical solutions for everyday problems.</p>
                         <p class="text-sm text-gray-500">Contact: srinivasmanikantarajapantula@gmail.com</p>
                     </div>
                     <div class="text-center bg-gray-50 p-8 rounded-2xl card-hover-effect fade-in-section" style="transition-delay: 150ms;">
-                        <div class="w-32 h-32 rounded-full mx-auto mb-4 bg-gray-300 flex items-center justify-center">
-                           <span class="text-5xl text-gray-500">👤</span>
-                        </div>
+                        <img src="sudheer.png" alt="P. Sudheer Babu" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover border-4 border-white shadow-sm">
                         <h3 class="text-xl font-bold">P. Sudheer Babu</h3>
                         <p class="text-orange-500 font-medium">(24HP5A0222)</p>
                         <p class="text-gray-600 my-4">A creative thinker with a knack for circuit design and hardware integration, dedicated to improving safety through technology.</p>
                         <p class="text-sm text-gray-500">Contact: prathurisudheerbabu@gmail.com</p>
                     </div>
                     <div class="text-center bg-gray-50 p-8 rounded-2xl card-hover-effect fade-in-section" style="transition-delay: 300ms;">
-                        <div class="w-32 h-32 rounded-full mx-auto mb-4 bg-gray-300 flex items-center justify-center">
-                            <span class="text-5xl text-gray-500">👤</span>
-                        </div>
+                        <img src="surya.png" alt="B.V. Surya Narayana" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover border-4 border-white shadow-sm">
                         <h3 class="text-xl font-bold">B.V. Surya Narayana</h3>
                         <p class="text-orange-500 font-medium">(24HP5A0223)</p>
                         <p class="text-gray-600 my-4">Expert in software development and programming logic, ensuring the system's brain is as smart and efficient as its body.</p>
@@ -443,16 +436,15 @@ void loop() {
             
             // Active Nav Link Styling on Scroll
             const navLinks = document.querySelectorAll('.nav-link');
-            // Updated to include the new section
             const pageSections = document.querySelectorAll('main section');
             
             const activateNavLink = (id) => {
                  navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if(link.getAttribute('href') === `#${id}`) {
-                        link.classList.add('active');
-                    }
-                });
+                     link.classList.remove('active');
+                     if(link.getAttribute('href') === `#${id}`) {
+                         link.classList.add('active');
+                     }
+                 });
             }
 
             const scrollObserver = new IntersectionObserver((entries) => {
@@ -468,7 +460,7 @@ void loop() {
             });
 
 
-            // Applications Tab Functionality - CORRECTED LOGIC
+            // Applications Tab Functionality
             const tabButtons = document.querySelectorAll('.tab-button');
             const tabPanes = document.querySelectorAll('.tab-pane');
 
@@ -476,34 +468,35 @@ void loop() {
                 button.addEventListener('click', () => {
                     const tab = button.dataset.tab;
 
-                    // 1. Update button style (Deactivate all, Activate clicked)
+                    // 1. Update button style
                     tabButtons.forEach(btn => btn.classList.remove('active'));
                     button.classList.add('active');
 
-                    // 2. Update content visibility (Hide all, Show target)
+                    // 2. Update content visibility
                     tabPanes.forEach(pane => {
                         if (pane.id === `${tab}-content`) {
-                            // Show target pane
                             pane.classList.remove('hidden');
                         } else {
-                            // Hide other panes
                             pane.classList.add('hidden');
                         }
                     });
                 });
             });
             
-            // Initialize the component image fallbacks immediately (for local images)
-            document.querySelectorAll('#components img').forEach(img => {
-                if (img.src.includes('.jpeg') || img.src.includes('.jpg')) {
-                    img.onerror = function() {
-                        const altText = img.alt || 'Image';
-                        const placeholderText = encodeURIComponent(altText.replace(/\s/g, '+'));
-                        img.src = `https://placehold.co/128x128/f3f4f6/9ca3af?text=${placeholderText}`;
-                        img.classList.remove('w-32', 'h-32');
-                        img.classList.add('w-24', 'h-24'); 
-                    };
-                }
+            // Initialize image fallbacks
+            document.querySelectorAll('img').forEach(img => {
+                // Skip placeholder images
+                if (img.src.includes('placehold.co')) return;
+
+                img.onerror = function() {
+                    const altText = img.alt || 'Image';
+                    const placeholderText = encodeURIComponent(altText.replace(/\s/g, '+'));
+                    let size = '600x400';
+                    if (img.classList.contains('w-32')) {
+                        size = '128x128';
+                    }
+                    img.src = `https://placehold.co/${size}/f3f4f6/9ca3af?text=${placeholderText}`;
+                };
             });
 
         });
