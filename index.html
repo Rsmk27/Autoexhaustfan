@@ -56,6 +56,11 @@
             color: #f97316;
             background-color: #fff7ed;
         }
+        /* Prevent image interaction */
+        img {
+            pointer-events: none;
+            user-select: none;
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
@@ -413,6 +418,13 @@ void loop() {
     <script>
         document.addEventListener('DOMContentLoaded', () => {
 
+            // Prevent image download via right-click
+            document.addEventListener('contextmenu', (e) => {
+                if (e.target.tagName === 'IMG') {
+                    e.preventDefault();
+                }
+            });
+
             // Mobile Menu Toggle
             const mobileMenuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
@@ -503,4 +515,5 @@ void loop() {
     </script>
 </body>
 </html>
+
 
