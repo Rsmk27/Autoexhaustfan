@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AutoExhaustFan | Intelligent Ventilation Systems</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -126,10 +127,8 @@
     <header class="fixed w-full top-0 z-50 glass-nav transition-all duration-300" id="navbar">
         <nav class="container mx-auto px-6 h-20 flex justify-between items-center">
             <a href="#home" class="flex items-center gap-2 group">
-                <div
-                    class="w-10 h-10 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center text-white shadow-lg group-hover:shadow-orange-200 transition-all duration-300">
-                    <i data-lucide="fan" class="w-6 h-6 animate-spin-slow"></i>
-                </div>
+                <img src="favicon.svg" alt="AutoExhaustFan Logo"
+                    class="w-10 h-10 rounded-xl shadow-lg group-hover:shadow-orange-200 transition-all duration-300">
                 <span class="text-xl font-bold text-slate-900 tracking-tight">Auto<span
                         class="text-orange-600">Exhaust</span>Fan</span>
             </a>
@@ -138,504 +137,516 @@
                 <a href="#overview"
                     class="text-sm font-medium text-slate-600 hover:text-orange-600 transition-colors">Overview</a>
                 <a href="#how-it-works"
-                    class="text-sm font-medium text-slate-600 hover:text-orange-600 transition-colors">How It
-                    Works</a>
+                    class="text-sm font-medium text-slate-600 hover:text-orange-600 transition-colors">How It Works</a>
                 <a href="#components"
                     class="text-sm font-medium text-slate-600 hover:text-orange-600 transition-colors">Components</a>
                 <a href="#circuit"
                     class="text-sm font-medium text-slate-600 hover:text-orange-600 transition-colors">Circuit</a>
                 <a href="#applications"
-                    class="text-sm font-medium text-slate-600 hover:text-orange-600 transition-colors">Applications</a><a
-                    href="#team"
+                    class="text-sm font-medium text-slate-600 hover:text-orange-600 transition-colors">Applications</a>
+                <a href="#team"
                     class="text-sm font-medium text-slate-600 hover:text-orange-600 transition-colors">Team</a>
             </div>
-            <div class="flex items-center gap-4"><a href="https://github.com/Rsmk27/Autoexhaustfan" target="_blank"
-                    class="hidden md:flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-100 text-slate-700 hover:bg-slate-200 font-medium text-sm transition-colors"><i
-                        data-lucide="github" class="w-4 h-4"></i><span>GitHub</span></a><button id="mobile-menu-btn"
-                    class="md:hidden p-2 text-slate-600 hover:bg-slate-100 rounded-lg"><i data-lucide="menu"
-                        class="w-6 h-6"></i></button></div>
+
+            <div class="flex items-center gap-4">
+                <a href="https://github.com/Rsmk27/Autoexhaustfan" target="_blank"
+                    class="hidden md:flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-100 text-slate-700 hover:bg-slate-200 font-medium text-sm transition-colors">
+                    <i data-lucide="github" class="w-4 h-4"></i>
+                    <span>GitHub</span>
+                </a>
+                <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-600 hover:bg-slate-100 rounded-lg">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
         </nav>
-        < !-- Mobile Menu -->
-            <div id="mobile-menu"
-                class="hidden md:hidden bg-white border-t border-slate-100 absolute w-full left-0 shadow-lg">
-                <div class="flex flex-col p-4 space-y-2"><a href="#overview"
-                        class="p-3 rounded-lg hover:bg-orange-50 text-slate-600 hover:text-orange-600 font-medium">Overview</a><a
-                        href="#how-it-works"
-                        class="p-3 rounded-lg hover:bg-orange-50 text-slate-600 hover:text-orange-600 font-medium">How
-                        It Works</a><a href="#components"
-                        class="p-3 rounded-lg hover:bg-orange-50 text-slate-600 hover:text-orange-600 font-medium">Components</a><a
-                        href="#circuit"
-                        class="p-3 rounded-lg hover:bg-orange-50 text-slate-600 hover:text-orange-600 font-medium">Circuit</a><a
-                        href="#applications"
-                        class="p-3 rounded-lg hover:bg-orange-50 text-slate-600 hover:text-orange-600 font-medium">Applications</a><a
-                        href="#team"
-                        class="p-3 rounded-lg hover:bg-orange-50 text-slate-600 hover:text-orange-600 font-medium">Team</a>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+            class="hidden md:hidden bg-white border-t border-slate-100 absolute w-full left-0 shadow-lg">
+            <div class="flex flex-col p-4 space-y-2">
+                <a href="#overview"
+                    class="p-3 rounded-lg hover:bg-orange-50 text-slate-600 hover:text-orange-600 font-medium">Overview</a>
+                <a href="#how-it-works"
+                    class="p-3 rounded-lg hover:bg-orange-50 text-slate-600 hover:text-orange-600 font-medium">How It
+                    Works</a>
+                <a href="#components"
+                    class="p-3 rounded-lg hover:bg-orange-50 text-slate-600 hover:text-orange-600 font-medium">Components</a>
+                <a href="#circuit"
+                    class="p-3 rounded-lg hover:bg-orange-50 text-slate-600 hover:text-orange-600 font-medium">Circuit</a>
+                <a href="#applications"
+                    class="p-3 rounded-lg hover:bg-orange-50 text-slate-600 hover:text-orange-600 font-medium">Applications</a>
+                <a href="#team"
+                    class="p-3 rounded-lg hover:bg-orange-50 text-slate-600 hover:text-orange-600 font-medium">Team</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-20">
+        <!-- Hero Section -->
+        <section id="home" class="relative min-h-[90vh] flex items-center overflow-hidden hero-pattern">
+            <div class="absolute inset-0 bg-gradient-to-b from-white via-transparent to-white/50 pointer-events-none">
+            </div>
+
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+                    <div class="lg:w-1/2 text-center lg:text-left">
+                        <div
+                            class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-50 border border-orange-100 text-orange-600 text-xs font-semibold uppercase tracking-wider mb-6">
+                            <span class="w-2 h-2 rounded-full bg-orange-500 animate-pulse"></span>
+                            Smart Safety System
+                        </div>
+                        <h1
+                            class="text-5xl lg:text-7xl font-extrabold text-slate-900 leading-tight mb-6 tracking-tight">
+                            Intelligent <span class="gradient-text">Ventilation</span> <br>for Safer Spaces.
+                        </h1>
+                        <p class="text-lg text-slate-600 mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                            An automated solution that detects harmful gases and smoke, activating ventilation precisely
+                            when needed. Enhancing safety, health, and energy efficiency.
+                        </p>
+                        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                            <a href="#overview"
+                                class="w-full sm:w-auto px-8 py-4 bg-orange-600 hover:bg-orange-700 text-white rounded-xl font-semibold shadow-lg shadow-orange-200 transition-all transform hover:-translate-y-1 flex items-center justify-center gap-2">
+                                Discover More
+                                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </a>
+                            <a href="#circuit"
+                                class="w-full sm:w-auto px-8 py-4 bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 rounded-xl font-semibold transition-all flex items-center justify-center gap-2">
+                                View Circuit
+                                <i data-lucide="cpu" class="w-4 h-4"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="lg:w-1/2 relative">
+                        <div
+                            class="absolute -inset-4 bg-gradient-to-r from-orange-500 to-amber-500 rounded-full opacity-20 blur-3xl animate-pulse">
+                        </div>
+                        <!-- Lottie Animation -->
+                        <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js"
+                            type="module"></script>
+                        <dotlottie-wc src="https://lottie.host/000df5d6-40fd-4de8-89d0-66feb491f3c1/YHchUrQY9G.lottie"
+                            style="width: 100%; height: auto; max-width: 500px;" speed="1" autoplay loop></dotlottie-wc>
+                    </div>
                 </div>
             </div>
-    </header>
-    <main class="pt-20">
-        < !-- Hero Section -->
-            <section id="home" class="relative min-h-[90vh] flex items-center overflow-hidden hero-pattern">
-                <div
-                    class="absolute inset-0 bg-gradient-to-b from-white via-transparent to-white/50 pointer-events-none">
+        </section>
+
+        <!-- Overview Section -->
+        <section id="overview" class="py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16 max-w-3xl mx-auto">
+                    <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">The Challenge We're Solving</h2>
+                    <p class="text-slate-600 text-lg">Traditional ventilation relies on manual control, leading to human
+                        error and safety risks. We're changing that.</p>
                 </div>
-                <div class="container mx-auto px-6 relative z-10">
-                    <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
-                        <div class="lg:w-1/2 text-center lg:text-left">
-                            <div
-                                class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-50 border border-orange-100 text-orange-600 text-xs font-semibold uppercase tracking-wider mb-6">
-                                <span class="w-2 h-2 rounded-full bg-orange-500 animate-pulse"></span>Smart Safety
-                                System </div>
-                            <h1
-                                class="text-5xl lg:text-7xl font-extrabold text-slate-900 leading-tight mb-6 tracking-tight">
-                                Intelligent <span class="gradient-text">Ventilation</span><br>for Safer Spaces. </h1>
-                            <p class="text-lg text-slate-600 mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0">An
-                                automated solution that detects harmful gases and smoke,
-                                activating ventilation precisely when needed. Enhancing safety,
-                                health,
-                                and energy efficiency. </p>
-                            <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4"><a
-                                    href="#overview"
-                                    class="w-full sm:w-auto px-8 py-4 bg-orange-600 hover:bg-orange-700 text-white rounded-xl font-semibold shadow-lg shadow-orange-200 transition-all transform hover:-translate-y-1 flex items-center justify-center gap-2">Discover
-                                    More <i data-lucide="arrow-right" class="w-4 h-4"></i></a><a href="#circuit"
-                                    class="w-full sm:w-auto px-8 py-4 bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 rounded-xl font-semibold transition-all flex items-center justify-center gap-2">View
-                                    Circuit <i data-lucide="cpu" class="w-4 h-4"></i></a></div>
-                        </div>
-                        <div class="lg:w-1/2 relative">
-                            <div
-                                class="absolute -inset-4 bg-gradient-to-r from-orange-500 to-amber-500 rounded-full opacity-20 blur-3xl animate-pulse">
-                            </div>
-                            < !-- Lottie Animation -->
-                                <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js"
-                                    type="module"></script><dotlottie-wc
-                                    src="https://lottie.host/000df5d6-40fd-4de8-89d0-66feb491f3c1/YHchUrQY9G.lottie"
-                                    style="width: 100%; height: auto; max-width: 500px;" speed="1" autoplay
-                                    loop></dotlottie-wc>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            < !-- Overview Section -->
-                <section id="overview" class="py-24 bg-white">
-                    <div class="container mx-auto px-6">
-                        <div class="text-center mb-16 max-w-3xl mx-auto">
-                            <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">The Challenge We're Solving
-                            </h2>
-                            <p class="text-slate-600 text-lg">Traditional ventilation relies on manual control,
-                                leading to human error and safety risks. We're changing that.</p>
-                        </div>
-                        <div class="grid md:grid-cols-3 gap-8">
-                            <div class="bg-slate-50 rounded-2xl p-8 border border-slate-100 card-hover group">
-                                <div
-                                    class="w-14 h-14 bg-red-100 text-red-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                                    <i data-lucide="alert-triangle" class="w-7 h-7"></i></div>
-                                <h3 class="text-xl font-bold text-slate-900 mb-3">Safety Risks</h3>
-                                <p class="text-slate-600 leading-relaxed">Undetected gas leaks or smoke accumulation can
-                                    lead to fires and health hazards. Immediate response is critical.</p>
-                            </div>
-                            <div class="bg-slate-50 rounded-2xl p-8 border border-slate-100 card-hover group">
-                                <div
-                                    class="w-14 h-14 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                                    <i data-lucide="brain-circuit" class="w-7 h-7"></i></div>
-                                <h3 class="text-xl font-bold text-slate-900 mb-3">Human Error</h3>
-                                <p class="text-slate-600 leading-relaxed">Forgetting to turn on fans is common. Manual
-                                    systems fail when people forget,
-                                    compromising safety.</p>
-                            </div>
-                            <div class="bg-slate-50 rounded-2xl p-8 border border-slate-100 card-hover group">
-                                <div
-                                    class="w-14 h-14 bg-green-100 text-green-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                                    <i data-lucide="zap" class="w-7 h-7"></i></div>
-                                <h3 class="text-xl font-bold text-slate-900 mb-3">Energy Waste</h3>
-                                <p class="text-slate-600 leading-relaxed">Fans left running unnecessarily waste power.
-                                    Automated systems run only when needed,
-                                    saving energy.</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                < !-- How It Works -->
-                    <section id="how-it-works" class="py-24 bg-slate-900 text-white relative overflow-hidden">
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-slate-50 rounded-2xl p-8 border border-slate-100 card-hover group">
                         <div
-                            class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20">
+                            class="w-14 h-14 bg-red-100 text-red-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <i data-lucide="alert-triangle" class="w-7 h-7"></i>
                         </div>
-                        <div class="container mx-auto px-6 relative z-10">
-                            <div class="text-center mb-20">
-                                <h2 class="text-3xl lg:text-4xl font-bold mb-4">Intelligent Process Flow</h2>
-                                <p class="text-slate-400 text-lg max-w-2xl mx-auto">A seamless four-step cycle ensuring
-                                    constant monitoring and instant response.</p>
-                            </div>
-                            <div class="grid md:grid-cols-4 gap-8 relative">
-                                < !-- Step 1 -->
-                                    <div class="step-connector relative text-center group">
-                                        <div
-                                            class="w-20 h-20 mx-auto bg-slate-800 border-2 border-orange-500 rounded-full flex items-center justify-center text-2xl font-bold mb-6 relative z-10 shadow-[0_0_20px_rgba(249,115,22,0.3)] group-hover:scale-110 transition-transform">
-                                            1 </div>
-                                        <h3 class="text-xl font-bold text-orange-400 mb-2">Detection</h3>
-                                        <p class="text-slate-400 text-sm px-4">MQ-2 sensor monitors air for gas and
-                                            smoke particles.</p>
-                                    </div>
-                                    < !-- Step 2 -->
-                                        <div class="step-connector relative text-center group">
-                                            <div
-                                                class="w-20 h-20 mx-auto bg-slate-800 border-2 border-slate-600 group-hover:border-orange-500 rounded-full flex items-center justify-center text-2xl font-bold mb-6 relative z-10 transition-colors">
-                                                2 </div>
-                                            <h3 class="text-xl font-bold text-white mb-2">Processing</h3>
-                                            <p class="text-slate-400 text-sm px-4">Arduino analyzes data against safety
-                                                thresholds.</p>
-                                        </div>
-                                        < !-- Step 3 -->
-                                            <div class="step-connector relative text-center group">
-                                                <div
-                                                    class="w-20 h-20 mx-auto bg-slate-800 border-2 border-slate-600 group-hover:border-orange-500 rounded-full flex items-center justify-center text-2xl font-bold mb-6 relative z-10 transition-colors">
-                                                    3 </div>
-                                                <h3 class="text-xl font-bold text-white mb-2">Action</h3>
-                                                <p class="text-slate-400 text-sm px-4">Relay triggers the high-voltage
-                                                    fan circuit.</p>
-                                            </div>
-                                            < !-- Step 4 -->
-                                                <div class="relative text-center group">
-                                                    <div
-                                                        class="w-20 h-20 mx-auto bg-slate-800 border-2 border-slate-600 group-hover:border-orange-500 rounded-full flex items-center justify-center text-2xl font-bold mb-6 relative z-10 transition-colors">
-                                                        4 </div>
-                                                    <h3 class="text-xl font-bold text-white mb-2">Ventilation</h3>
-                                                    <p class="text-slate-400 text-sm px-4">Fan clears fumes,
-                                                        restoring safe air quality.</p>
-                                                </div>
-                            </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Safety Risks</h3>
+                        <p class="text-slate-600 leading-relaxed">Undetected gas leaks or smoke accumulation can lead to
+                            fires and health hazards. Immediate response is critical.</p>
+                    </div>
+
+                    <div class="bg-slate-50 rounded-2xl p-8 border border-slate-100 card-hover group">
+                        <div
+                            class="w-14 h-14 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <i data-lucide="brain-circuit" class="w-7 h-7"></i>
                         </div>
-                    </section>
-                    < !-- Components -->
-                        <section id="components" class="py-24 bg-slate-50">
-                            <div class="container mx-auto px-6">
-                                <div class="text-center mb-16">
-                                    <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">Hardware Stack</h2>
-                                    <p class="text-slate-600 text-lg">Built with reliable,
-                                        industry-standard components.</p>
-                                </div>
-                                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-                                    < !-- Component Card -->
-                                        <div
-                                            class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition-all text-center group border border-slate-100">
-                                            <div
-                                                class="h-32 mb-4 flex items-center justify-center p-2 bg-slate-50 rounded-xl group-hover:bg-orange-50 transition-colors">
-                                                <img src="arduino UNO.jpeg" alt="Arduino UNO"
-                                                    class="max-h-full object-contain mix-blend-multiply"
-                                                    onerror="this.src='https://placehold.co/200x200/f1f5f9/94a3b8?text=Arduino'">
-                                            </div>
-                                            <h3 class="font-bold text-slate-900">Arduino UNO</h3>
-                                            <p class="text-xs text-slate-500 mt-1 uppercase tracking-wide">Controller
-                                            </p>
-                                        </div>
-                                        <div
-                                            class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition-all text-center group border border-slate-100">
-                                            <div
-                                                class="h-32 mb-4 flex items-center justify-center p-2 bg-slate-50 rounded-xl group-hover:bg-orange-50 transition-colors">
-                                                <img src="mq-2.jpeg" alt="MQ-2 Sensor"
-                                                    class="max-h-full object-contain mix-blend-multiply"
-                                                    onerror="this.src='https://placehold.co/200x200/f1f5f9/94a3b8?text=Sensor'">
-                                            </div>
-                                            <h3 class="font-bold text-slate-900">MQ-2 Sensor</h3>
-                                            <p class="text-xs text-slate-500 mt-1 uppercase tracking-wide">Gas Detector
-                                            </p>
-                                        </div>
-                                        <div
-                                            class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition-all text-center group border border-slate-100">
-                                            <div
-                                                class="h-32 mb-4 flex items-center justify-center p-2 bg-slate-50 rounded-xl group-hover:bg-orange-50 transition-colors">
-                                                <img src="5v relay.jpeg" alt="Relay Module"
-                                                    class="max-h-full object-contain mix-blend-multiply"
-                                                    onerror="this.src='https://placehold.co/200x200/f1f5f9/94a3b8?text=Relay'">
-                                            </div>
-                                            <h3 class="font-bold text-slate-900">5V Relay</h3>
-                                            <p class="text-xs text-slate-500 mt-1 uppercase tracking-wide">Switch</p>
-                                        </div>
-                                        <div
-                                            class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition-all text-center group border border-slate-100">
-                                            <div
-                                                class="h-32 mb-4 flex items-center justify-center p-2 bg-slate-50 rounded-xl group-hover:bg-orange-50 transition-colors">
-                                                <img src="fan.jpeg" alt="Exhaust Fan"
-                                                    class="max-h-full object-contain mix-blend-multiply"
-                                                    onerror="this.src='https://placehold.co/200x200/f1f5f9/94a3b8?text=Fan'">
-                                            </div>
-                                            <h3 class="font-bold text-slate-900">Exhaust Fan</h3>
-                                            <p class="text-xs text-slate-500 mt-1 uppercase tracking-wide">Actuator</p>
-                                        </div>
-                                        <div
-                                            class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition-all text-center group border border-slate-100">
-                                            <div
-                                                class="h-32 mb-4 flex items-center justify-center p-2 bg-slate-50 rounded-xl group-hover:bg-orange-50 transition-colors">
-                                                <img src="jumper wires.jpeg" alt="Wires"
-                                                    class="max-h-full object-contain mix-blend-multiply"
-                                                    onerror="this.src='https://placehold.co/200x200/f1f5f9/94a3b8?text=Wires'">
-                                            </div>
-                                            <h3 class="font-bold text-slate-900">Jumper Wires</h3>
-                                            <p class="text-xs text-slate-500 mt-1 uppercase tracking-wide">Connectivity
-                                            </p>
-                                        </div>
-                                </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Human Error</h3>
+                        <p class="text-slate-600 leading-relaxed">Forgetting to turn on fans is common. Manual systems
+                            fail when people forget, compromising safety.</p>
+                    </div>
+
+                    <div class="bg-slate-50 rounded-2xl p-8 border border-slate-100 card-hover group">
+                        <div
+                            class="w-14 h-14 bg-green-100 text-green-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <i data-lucide="zap" class="w-7 h-7"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Energy Waste</h3>
+                        <p class="text-slate-600 leading-relaxed">Fans left running unnecessarily waste power. Automated
+                            systems run only when needed, saving energy.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works -->
+        <section id="how-it-works" class="py-24 bg-slate-900 text-white relative overflow-hidden">
+            <div class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20"></div>
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="text-center mb-20">
+                    <h2 class="text-3xl lg:text-4xl font-bold mb-4">Intelligent Process Flow</h2>
+                    <p class="text-slate-400 text-lg max-w-2xl mx-auto">A seamless four-step cycle ensuring constant
+                        monitoring and instant response.</p>
+                </div>
+
+                <div class="grid md:grid-cols-4 gap-8 relative">
+                    <!-- Step 1 -->
+                    <div class="step-connector relative text-center group">
+                        <div
+                            class="w-20 h-20 mx-auto bg-slate-800 border-2 border-orange-500 rounded-full flex items-center justify-center text-2xl font-bold mb-6 relative z-10 shadow-[0_0_20px_rgba(249,115,22,0.3)] group-hover:scale-110 transition-transform">
+                            1
+                        </div>
+                        <h3 class="text-xl font-bold text-orange-400 mb-2">Detection</h3>
+                        <p class="text-slate-400 text-sm px-4">MQ-2 sensor monitors air for gas and smoke particles.</p>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="step-connector relative text-center group">
+                        <div
+                            class="w-20 h-20 mx-auto bg-slate-800 border-2 border-slate-600 group-hover:border-orange-500 rounded-full flex items-center justify-center text-2xl font-bold mb-6 relative z-10 transition-colors">
+                            2
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Processing</h3>
+                        <p class="text-slate-400 text-sm px-4">Arduino analyzes data against safety thresholds.</p>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="step-connector relative text-center group">
+                        <div
+                            class="w-20 h-20 mx-auto bg-slate-800 border-2 border-slate-600 group-hover:border-orange-500 rounded-full flex items-center justify-center text-2xl font-bold mb-6 relative z-10 transition-colors">
+                            3
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Action</h3>
+                        <p class="text-slate-400 text-sm px-4">Relay triggers the high-voltage fan circuit.</p>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="relative text-center group">
+                        <div
+                            class="w-20 h-20 mx-auto bg-slate-800 border-2 border-slate-600 group-hover:border-orange-500 rounded-full flex items-center justify-center text-2xl font-bold mb-6 relative z-10 transition-colors">
+                            4
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Ventilation</h3>
+                        <p class="text-slate-400 text-sm px-4">Fan clears fumes, restoring safe air quality.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Components -->
+        <section id="components" class="py-24 bg-slate-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">Hardware Stack</h2>
+                    <p class="text-slate-600 text-lg">Built with reliable, industry-standard components.</p>
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                    <!-- Component Card -->
+                    <div
+                        class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition-all text-center group border border-slate-100">
+                        <div
+                            class="h-32 mb-4 flex items-center justify-center p-2 bg-slate-50 rounded-xl group-hover:bg-orange-50 transition-colors">
+                            <img src="arduino UNO.jpeg" alt="Arduino UNO"
+                                class="max-h-full object-contain mix-blend-multiply"
+                                onerror="this.src='https://placehold.co/200x200/f1f5f9/94a3b8?text=Arduino'">
+                        </div>
+                        <h3 class="font-bold text-slate-900">Arduino UNO</h3>
+                        <p class="text-xs text-slate-500 mt-1 uppercase tracking-wide">Controller</p>
+                    </div>
+
+                    <div
+                        class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition-all text-center group border border-slate-100">
+                        <div
+                            class="h-32 mb-4 flex items-center justify-center p-2 bg-slate-50 rounded-xl group-hover:bg-orange-50 transition-colors">
+                            <img src="mq-2.jpeg" alt="MQ-2 Sensor" class="max-h-full object-contain mix-blend-multiply"
+                                onerror="this.src='https://placehold.co/200x200/f1f5f9/94a3b8?text=Sensor'">
+                        </div>
+                        <h3 class="font-bold text-slate-900">MQ-2 Sensor</h3>
+                        <p class="text-xs text-slate-500 mt-1 uppercase tracking-wide">Gas Detector</p>
+                    </div>
+
+                    <div
+                        class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition-all text-center group border border-slate-100">
+                        <div
+                            class="h-32 mb-4 flex items-center justify-center p-2 bg-slate-50 rounded-xl group-hover:bg-orange-50 transition-colors">
+                            <img src="5v relay.jpeg" alt="Relay Module"
+                                class="max-h-full object-contain mix-blend-multiply"
+                                onerror="this.src='https://placehold.co/200x200/f1f5f9/94a3b8?text=Relay'">
+                        </div>
+                        <h3 class="font-bold text-slate-900">5V Relay</h3>
+                        <p class="text-xs text-slate-500 mt-1 uppercase tracking-wide">Switch</p>
+                    </div>
+
+                    <div
+                        class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition-all text-center group border border-slate-100">
+                        <div
+                            class="h-32 mb-4 flex items-center justify-center p-2 bg-slate-50 rounded-xl group-hover:bg-orange-50 transition-colors">
+                            <img src="fan.jpeg" alt="Exhaust Fan" class="max-h-full object-contain mix-blend-multiply"
+                                onerror="this.src='https://placehold.co/200x200/f1f5f9/94a3b8?text=Fan'">
+                        </div>
+                        <h3 class="font-bold text-slate-900">Exhaust Fan</h3>
+                        <p class="text-xs text-slate-500 mt-1 uppercase tracking-wide">Actuator</p>
+                    </div>
+
+                    <div
+                        class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition-all text-center group border border-slate-100">
+                        <div
+                            class="h-32 mb-4 flex items-center justify-center p-2 bg-slate-50 rounded-xl group-hover:bg-orange-50 transition-colors">
+                            <img src="jumper wires.jpeg" alt="Wires"
+                                class="max-h-full object-contain mix-blend-multiply"
+                                onerror="this.src='https://placehold.co/200x200/f1f5f9/94a3b8?text=Wires'">
+                        </div>
+                        <h3 class="font-bold text-slate-900">Jumper Wires</h3>
+                        <p class="text-xs text-slate-500 mt-1 uppercase tracking-wide">Connectivity</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Circuit & Code -->
+        <section id="circuit" class="py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col lg:flex-row gap-16">
+                    <div class="lg:w-1/2">
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="p-2 bg-orange-100 text-orange-600 rounded-lg">
+                                <i data-lucide="cpu" class="w-6 h-6"></i>
                             </div>
-                        </section>
-                        < !-- Circuit & Code -->
-                            <section id="circuit" class="py-24 bg-white">
-                                <div class="container mx-auto px-6">
-                                    <div class="flex flex-col lg:flex-row gap-16">
-                                        <div class="lg:w-1/2">
-                                            <div class="flex items-center gap-3 mb-6">
-                                                <div class="p-2 bg-orange-100 text-orange-600 rounded-lg"><i
-                                                        data-lucide="cpu" class="w-6 h-6"></i></div>
-                                                <h2 class="text-3xl font-bold text-slate-900">Circuit Diagram</h2>
-                                            </div>
-                                            <p class="text-slate-600 mb-8">The schematic illustrates the precise
-                                                connections between the Arduino microcontroller,
-                                                MQ-2 sensor,
-                                                relay module,
-                                                and the exhaust fan.</p>
-                                            <div
-                                                class="bg-white border border-slate-200 rounded-2xl p-4 shadow-lg hover:shadow-xl transition-shadow">
-                                                <img src="circuit diagram.jpg" alt="Circuit Diagram"
-                                                    class="w-full rounded-lg"
-                                                    onerror="this.src='https://placehold.co/600x400/f8fafc/cbd5e1?text=Circuit+Diagram'">
-                                            </div>
-                                        </div>
-                                        <div class="lg:w-1/2">
-                                            <div class="flex items-center gap-3 mb-6">
-                                                <div class="p-2 bg-blue-100 text-blue-600 rounded-lg"><i
-                                                        data-lucide="code-2" class="w-6 h-6"></i></div>
-                                                <h2 class="text-3xl font-bold text-slate-900">Firmware Code</h2>
-                                            </div>
-                                            <p class="text-slate-600 mb-8">Optimized C++code for the Arduino platform to
-                                                handle real-time sensor data processing and actuator control.</p>
-                                            <div class="code-block p-6 overflow-x-auto shadow-2xl">
-                                                <pre class="text-sm font-mono text-blue-300"><code><span class="text-purple-400">const</span><span class="text-yellow-300">int</span>MQ2_Pin=A0;
-        <span class="text-purple-400">const</span><span class="text-yellow-300">int</span>Fan=7;
-        <span class="text-purple-400">const</span><span class="text-yellow-300">int</span>Threshold=300;
+                            <h2 class="text-3xl font-bold text-slate-900">Circuit Diagram</h2>
+                        </div>
+                        <p class="text-slate-600 mb-8">The schematic illustrates the precise connections between the
+                            Arduino microcontroller, MQ-2 sensor, relay module, and the exhaust fan.</p>
 
-        <span class="text-purple-400">void</span><span class="text-blue-400">setup</span>() {
-            <span class="text-blue-400">pinMode</span>(MQ2_Pin, INPUT);
-            <span class="text-blue-400">pinMode</span>(Fan, OUTPUT);
-            <span class="text-blue-400">Serial</span>.<span class="text-blue-400">begin</span>(9600);
-        }
+                        <div
+                            class="bg-white border border-slate-200 rounded-2xl p-4 shadow-lg hover:shadow-xl transition-shadow">
+                            <img src="circuit diagram.jpg" alt="Circuit Diagram" class="w-full rounded-lg"
+                                onerror="this.src='https://placehold.co/600x400/f8fafc/cbd5e1?text=Circuit+Diagram'">
+                        </div>
+                    </div>
 
-        <span class="text-purple-400">void</span><span class="text-blue-400">loop</span>() {
-            <span class="text-yellow-300">int</span>smokeLevel=<span class="text-blue-400">analogRead</span>(MQ2_Pin);
-            <span class="text-blue-400">Serial</span>.<span class="text-blue-400">print</span>(<span class="text-green-300" >"Smoke Level: " </span>);
-            <span class="text-blue-400">Serial</span>.<span class="text-blue-400">println</span>(smokeLevel);
+                    <div class="lg:w-1/2">
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="p-2 bg-blue-100 text-blue-600 rounded-lg">
+                                <i data-lucide="code-2" class="w-6 h-6"></i>
+                            </div>
+                            <h2 class="text-3xl font-bold text-slate-900">Firmware Code</h2>
+                        </div>
+                        <p class="text-slate-600 mb-8">Optimized C++ code for the Arduino platform to handle real-time
+                            sensor data processing and actuator control.</p>
 
-            <span class="text-purple-400">if</span>(smokeLevel > Threshold) {
-                <span class="text-blue-400">digitalWrite</span>(Fan, HIGH);
-                <span class="text-slate-500"> // Activate Fan</span>
-            }
+                        <div class="code-block p-6 overflow-x-auto shadow-2xl">
+                            <pre class="text-sm font-mono text-blue-300"><code><span class="text-purple-400">const</span> <span class="text-yellow-300">int</span> MQ2_Pin = A0;
+<span class="text-purple-400">const</span> <span class="text-yellow-300">int</span> Fan = 7;
+<span class="text-purple-400">const</span> <span class="text-yellow-300">int</span> Threshold = 300;
 
-            <span class="text-purple-400">else</span> {
-                <span class="text-blue-400">digitalWrite</span>(Fan, LOW);
-                <span class="text-slate-500"> // Deactivate Fan</span>
-            }
+<span class="text-purple-400">void</span> <span class="text-blue-400">setup</span>() {
+  <span class="text-blue-400">pinMode</span>(MQ2_Pin, INPUT);
+  <span class="text-blue-400">pinMode</span>(Fan, OUTPUT);
+  <span class="text-blue-400">Serial</span>.<span class="text-blue-400">begin</span>(9600);
+}
 
-            <span class="text-blue-400">delay</span>(1000);
-        }
+<span class="text-purple-400">void</span> <span class="text-blue-400">loop</span>() {
+  <span class="text-yellow-300">int</span> smokeLevel = <span class="text-blue-400">analogRead</span>(MQ2_Pin);
+  <span class="text-blue-400">Serial</span>.<span class="text-blue-400">print</span>(<span class="text-green-300">"Smoke Level: "</span>);
+  <span class="text-blue-400">Serial</span>.<span class="text-blue-400">println</span>(smokeLevel);
 
-        </code></pre>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </section>
-                            < !-- Simulation Embed -->
-                                <section class="py-24 bg-slate-50">
-                                    <div class="container mx-auto px-6">
-                                        <div class="text-center mb-12">
-                                            <h2 class="text-3xl font-bold text-slate-900">Interactive Simulation</h2>
-                                            <p class="text-slate-600 mt-4">Test the circuit logic in real-time.</p>
-                                        </div>
-                                        <div
-                                            class="max-w-5xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden border border-slate-200">
-                                            <div class="aspect-video w-full relative"><iframe
-                                                    src="https://app.cirkitdesigner.com/project/cda45517-128c-4778-9c26-31509162e41e?view=interactive_preview"
-                                                    class="absolute inset-0 w-full h-full" allowfullscreen
-                                                    loading="lazy"></iframe></div>
-                                        </div>
-                                    </div>
-                                </section>
-                                < !-- Applications -->
-                                    <section id="applications" class="py-24 bg-white">
-                                        <div class="container mx-auto px-6">
-                                            <div class="text-center mb-16">
-                                                <h2 class="text-3xl font-bold text-slate-900">Versatile Applications
-                                                </h2>
-                                                <p class="text-slate-600 mt-4">Adaptable safety solutions for every
-                                                    environment.</p>
-                                            </div>
-                                            <div class="flex justify-center mb-12">
-                                                <div class="bg-slate-100 p-1 rounded-xl inline-flex"><button
-                                                        class="tab-btn active px-6 py-2.5 rounded-lg text-sm font-medium transition-all text-slate-600 hover:text-slate-900"
-                                                        data-target="domestic">Domestic</button><button
-                                                        class="tab-btn px-6 py-2.5 rounded-lg text-sm font-medium transition-all text-slate-600 hover:text-slate-900"
-                                                        data-target="commercial">Commercial</button><button
-                                                        class="tab-btn px-6 py-2.5 rounded-lg text-sm font-medium transition-all text-slate-600 hover:text-slate-900"
-                                                        data-target="industrial">Industrial</button></div>
-                                            </div>
-                                            <div id="domestic"
-                                                class="tab-content grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-                                                <div class="bg-orange-50 p-8 rounded-2xl border border-orange-100">
-                                                    <h3 class="text-xl font-bold text-orange-800 mb-3">Kitchens</h3>
-                                                    <p class="text-orange-700/80">Prevents accidents from cooking smoke
-                                                        or gas leaks,
-                                                        ensuring a safe cooking environment.</p>
-                                                </div>
-                                                <div class="bg-orange-50 p-8 rounded-2xl border border-orange-100">
-                                                    <h3 class="text-xl font-bold text-orange-800 mb-3">Bathrooms</h3>
-                                                    <p class="text-orange-700/80">Controls humidity levels and removes
-                                                        stale air automatically to prevent mold.</p>
-                                                </div>
-                                                <div class="bg-orange-50 p-8 rounded-2xl border border-orange-100">
-                                                    <h3 class="text-xl font-bold text-orange-800 mb-3">Garages</h3>
-                                                    <p class="text-orange-700/80">Ventilates dangerous fumes from
-                                                        vehicles,
-                                                        paints,
-                                                        or stored chemicals.</p>
-                                                </div>
-                                            </div>
-                                            <div id="commercial"
-                                                class="tab-content hidden grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-                                                <div class="bg-blue-50 p-8 rounded-2xl border border-blue-100">
-                                                    <h3 class="text-xl font-bold text-blue-800 mb-3">Restaurants</h3>
-                                                    <p class="text-blue-700/80">Manages heavy smoke and cooking fumes
-                                                        during peak hours efficiently. </p>
-                                                </div>
-                                                <div class="bg-blue-50 p-8 rounded-2xl border border-blue-100">
-                                                    <h3 class="text-xl font-bold text-blue-800 mb-3">Salons</h3>
-                                                    <p class="text-blue-700/80">Removes strong chemical odors from hair
-                                                        treatments and products.</p>
-                                                </div>
-                                                <div class="bg-blue-50 p-8 rounded-2xl border border-blue-100">
-                                                    <h3 class="text-xl font-bold text-blue-800 mb-3">Offices</h3>
-                                                    <p class="text-blue-700/80">Ensures fresh air circulation in meeting
-                                                        rooms and crowded spaces. </p>
-                                                </div>
-                                            </div>
-                                            <div id="industrial"
-                                                class="tab-content hidden grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-                                                <div class="bg-purple-50 p-8 rounded-2xl border border-purple-100">
-                                                    <h3 class="text-xl font-bold text-purple-800 mb-3">Chemical Plants
-                                                    </h3>
-                                                    <p class="text-purple-700/80">Critical safety ventilation for
-                                                        detecting and clearing toxic gas leaks.</p>
-                                                </div>
-                                                <div class="bg-purple-50 p-8 rounded-2xl border border-purple-100">
-                                                    <h3 class="text-xl font-bold text-purple-800 mb-3">Laboratories</h3>
-                                                    <p class="text-purple-700/80">Clears hazardous fumes from
-                                                        experiments automatically to protect researchers.</p>
-                                                </div>
-                                                <div class="bg-purple-50 p-8 rounded-2xl border border-purple-100">
-                                                    <h3 class="text-xl font-bold text-purple-800 mb-3">Warehouses</h3>
-                                                    <p class="text-purple-700/80">Monitors air quality in large storage
-                                                        areas with potential chemical storage.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </section>
-                                    < !-- Team -->
-                                        <section id="team" class="py-24 bg-slate-900 text-white">
-                                            <div class="container mx-auto px-6">
-                                                <div class="text-center mb-16">
-                                                    <h2 class="text-3xl font-bold mb-4">The Engineering Team</h2>
-                                                    <p class="text-slate-400">Dedicated students bringing innovation to
-                                                        life.</p>
-                                                </div>
-                                                <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                                                    < !-- Team Member 1 -->
-                                                        <div
-                                                            class="bg-slate-800 rounded-2xl p-8 text-center border border-slate-700 hover:border-orange-500 transition-colors group">
-                                                            <div
-                                                                class="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden border-4 border-slate-700 group-hover:border-orange-500 transition-colors">
-                                                                <img src="Rsmk.png" alt="R. Srinivasa Manikanta"
-                                                                    class="w-full h-full object-cover"></div>
-                                                            <h3 class="text-xl font-bold text-white mb-1">R. Srinivasa
-                                                                Manikanta</h3>
-                                                            <p class="text-orange-500 text-sm font-medium mb-4">
-                                                                24HP5A0221</p>
-                                                            <p class="text-slate-400 text-sm mb-6 leading-relaxed">
-                                                                Passionate about embedded systems and automation,
-                                                                focusing on practical solutions.</p><a
-                                                                href="mailto:srinivasmanikantarajapantula@gmail.com"
-                                                                class="inline-flex items-center gap-2 text-slate-300 hover:text-white text-sm transition-colors"><i
-                                                                    data-lucide="mail" class="w-4 h-4"></i>Contact </a>
-                                                        </div>
-                                                        < !-- Team Member 2 -->
-                                                            <div
-                                                                class="bg-slate-800 rounded-2xl p-8 text-center border border-slate-700 hover:border-orange-500 transition-colors group">
-                                                                <div
-                                                                    class="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden border-4 border-slate-700 group-hover:border-orange-500 transition-colors">
-                                                                    <img src="sudheer.png" alt="P. Sudheer Babu"
-                                                                        class="w-full h-full object-cover"></div>
-                                                                <h3 class="text-xl font-bold text-white mb-1">P. Sudheer
-                                                                    Babu</h3>
-                                                                <p class="text-orange-500 text-sm font-medium mb-4">
-                                                                    24HP5A0222</p>
-                                                                <p class="text-slate-400 text-sm mb-6 leading-relaxed">
-                                                                    Creative thinker with a knack for circuit design and
-                                                                    hardware integration.</p><a
-                                                                    href="mailto:prathurisudheerbabu@gmail.com"
-                                                                    class="inline-flex items-center gap-2 text-slate-300 hover:text-white text-sm transition-colors"><i
-                                                                        data-lucide="mail" class="w-4 h-4"></i>Contact
-                                                                </a>
-                                                            </div>
-                                                            < !-- Team Member 3 -->
-                                                                <div
-                                                                    class="bg-slate-800 rounded-2xl p-8 text-center border border-slate-700 hover:border-orange-500 transition-colors group">
-                                                                    <div
-                                                                        class="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden border-4 border-slate-700 group-hover:border-orange-500 transition-colors">
-                                                                        <img src="surya.png" alt="B.V. Surya Narayana"
-                                                                            class="w-full h-full object-cover"></div>
-                                                                    <h3 class="text-xl font-bold text-white mb-1">B.V.
-                                                                        Surya Narayana</h3>
-                                                                    <p class="text-orange-500 text-sm font-medium mb-4">
-                                                                        24HP5A0223</p>
-                                                                    <p
-                                                                        class="text-slate-400 text-sm mb-6 leading-relaxed">
-                                                                        Expert in software development and programming
-                                                                        logic for efficient systems.</p><a
-                                                                        href="mailto:venkatasuryabolisetti4@gmail.com"
-                                                                        class="inline-flex items-center gap-2 text-slate-300 hover:text-white text-sm transition-colors"><i
-                                                                            data-lucide="mail"
-                                                                            class="w-4 h-4"></i>Contact </a>
-                                                                </div>
-                                                </div>
-                                            </div>
-                                        </section>
+  <span class="text-purple-400">if</span> (smokeLevel > Threshold) {
+    <span class="text-blue-400">digitalWrite</span>(Fan, HIGH); <span class="text-slate-500">// Activate Fan</span>
+  } <span class="text-purple-400">else</span> {
+    <span class="text-blue-400">digitalWrite</span>(Fan, LOW);  <span class="text-slate-500">// Deactivate Fan</span>
+  }
+  <span class="text-blue-400">delay</span>(1000);
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Simulation Embed -->
+        <section class="py-24 bg-slate-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-slate-900">Interactive Simulation</h2>
+                    <p class="text-slate-600 mt-4">Test the circuit logic in real-time.</p>
+                </div>
+                <div class="max-w-5xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden border border-slate-200">
+                    <div class="aspect-video w-full relative">
+                        <iframe
+                            src="https://app.cirkitdesigner.com/project/cda45517-128c-4778-9c26-31509162e41e?view=interactive_preview"
+                            class="absolute inset-0 w-full h-full" allowfullscreen loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Applications -->
+        <section id="applications" class="py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold text-slate-900">Versatile Applications</h2>
+                    <p class="text-slate-600 mt-4">Adaptable safety solutions for every environment.</p>
+                </div>
+
+                <div class="flex justify-center mb-12">
+                    <div class="bg-slate-100 p-1 rounded-xl inline-flex">
+                        <button
+                            class="tab-btn active px-6 py-2.5 rounded-lg text-sm font-medium transition-all text-slate-600 hover:text-slate-900"
+                            data-target="domestic">Domestic</button>
+                        <button
+                            class="tab-btn px-6 py-2.5 rounded-lg text-sm font-medium transition-all text-slate-600 hover:text-slate-900"
+                            data-target="commercial">Commercial</button>
+                        <button
+                            class="tab-btn px-6 py-2.5 rounded-lg text-sm font-medium transition-all text-slate-600 hover:text-slate-900"
+                            data-target="industrial">Industrial</button>
+                    </div>
+                </div>
+
+                <div id="domestic" class="tab-content grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                    <div class="bg-orange-50 p-8 rounded-2xl border border-orange-100">
+                        <h3 class="text-xl font-bold text-orange-800 mb-3">Kitchens</h3>
+                        <p class="text-orange-700/80">Prevents accidents from cooking smoke or gas leaks, ensuring a
+                            safe cooking environment.</p>
+                    </div>
+                    <div class="bg-orange-50 p-8 rounded-2xl border border-orange-100">
+                        <h3 class="text-xl font-bold text-orange-800 mb-3">Bathrooms</h3>
+                        <p class="text-orange-700/80">Controls humidity levels and removes stale air automatically to
+                            prevent mold.</p>
+                    </div>
+                    <div class="bg-orange-50 p-8 rounded-2xl border border-orange-100">
+                        <h3 class="text-xl font-bold text-orange-800 mb-3">Garages</h3>
+                        <p class="text-orange-700/80">Ventilates dangerous fumes from vehicles, paints, or stored
+                            chemicals.</p>
+                    </div>
+                </div>
+
+                <div id="commercial" class="tab-content hidden grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                    <div class="bg-blue-50 p-8 rounded-2xl border border-blue-100">
+                        <h3 class="text-xl font-bold text-blue-800 mb-3">Restaurants</h3>
+                        <p class="text-blue-700/80">Manages heavy smoke and cooking fumes during peak hours efficiently.
+                        </p>
+                    </div>
+                    <div class="bg-blue-50 p-8 rounded-2xl border border-blue-100">
+                        <h3 class="text-xl font-bold text-blue-800 mb-3">Salons</h3>
+                        <p class="text-blue-700/80">Removes strong chemical odors from hair treatments and products.</p>
+                    </div>
+                    <div class="bg-blue-50 p-8 rounded-2xl border border-blue-100">
+                        <h3 class="text-xl font-bold text-blue-800 mb-3">Offices</h3>
+                        <p class="text-blue-700/80">Ensures fresh air circulation in meeting rooms and crowded spaces.
+                        </p>
+                    </div>
+                </div>
+
+                <div id="industrial" class="tab-content hidden grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                    <div class="bg-purple-50 p-8 rounded-2xl border border-purple-100">
+                        <h3 class="text-xl font-bold text-purple-800 mb-3">Chemical Plants</h3>
+                        <p class="text-purple-700/80">Critical safety ventilation for detecting and clearing toxic gas
+                            leaks.</p>
+                    </div>
+                    <div class="bg-purple-50 p-8 rounded-2xl border border-purple-100">
+                        <h3 class="text-xl font-bold text-purple-800 mb-3">Laboratories</h3>
+                        <p class="text-purple-700/80">Clears hazardous fumes from experiments automatically to protect
+                            researchers.</p>
+                    </div>
+                    <div class="bg-purple-50 p-8 rounded-2xl border border-purple-100">
+                        <h3 class="text-xl font-bold text-purple-800 mb-3">Warehouses</h3>
+                        <p class="text-purple-700/80">Monitors air quality in large storage areas with potential
+                            chemical storage.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team -->
+        <section id="team" class="py-24 bg-slate-900 text-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold mb-4">The Engineering Team</h2>
+                    <p class="text-slate-400">Dedicated students bringing innovation to life.</p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    <!-- Team Member 1 -->
+                    <div
+                        class="bg-slate-800 rounded-2xl p-8 text-center border border-slate-700 hover:border-orange-500 transition-colors group">
+                        <div
+                            class="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden border-4 border-slate-700 group-hover:border-orange-500 transition-colors">
+                            <img src="Rsmk.png" alt="R. Srinivasa Manikanta" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-1">R. Srinivasa Manikanta</h3>
+                        <p class="text-orange-500 text-sm font-medium mb-4">24HP5A0221</p>
+                        <p class="text-slate-400 text-sm mb-6 leading-relaxed">Passionate about embedded systems and
+                            automation, focusing on practical solutions.</p>
+                        <a href="mailto:srinivasmanikantarajapantula@gmail.com"
+                            class="inline-flex items-center gap-2 text-slate-300 hover:text-white text-sm transition-colors">
+                            <i data-lucide="mail" class="w-4 h-4"></i> Contact
+                        </a>
+                    </div>
+
+                    <!-- Team Member 2 -->
+                    <div
+                        class="bg-slate-800 rounded-2xl p-8 text-center border border-slate-700 hover:border-orange-500 transition-colors group">
+                        <div
+                            class="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden border-4 border-slate-700 group-hover:border-orange-500 transition-colors">
+                            <img src="sudheer.png" alt="P. Sudheer Babu" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-1">P. Sudheer Babu</h3>
+                        <p class="text-orange-500 text-sm font-medium mb-4">24HP5A0222</p>
+                        <p class="text-slate-400 text-sm mb-6 leading-relaxed">Creative thinker with a knack for circuit
+                            design and hardware integration.</p>
+                        <a href="mailto:prathurisudheerbabu@gmail.com"
+                            class="inline-flex items-center gap-2 text-slate-300 hover:text-white text-sm transition-colors">
+                            <i data-lucide="mail" class="w-4 h-4"></i> Contact
+                        </a>
+                    </div>
+
+                    <!-- Team Member 3 -->
+                    <div
+                        class="bg-slate-800 rounded-2xl p-8 text-center border border-slate-700 hover:border-orange-500 transition-colors group">
+                        <div
+                            class="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden border-4 border-slate-700 group-hover:border-orange-500 transition-colors">
+                            <img src="surya.png" alt="B.V. Surya Narayana" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-1">B.V. Surya Narayana</h3>
+                        <p class="text-orange-500 text-sm font-medium mb-4">24HP5A0223</p>
+                        <p class="text-slate-400 text-sm mb-6 leading-relaxed">Expert in software development and
+                            programming logic for efficient systems.</p>
+                        <a href="mailto:venkatasuryabolisetti4@gmail.com"
+                            class="inline-flex items-center gap-2 text-slate-300 hover:text-white text-sm transition-colors">
+                            <i data-lucide="mail" class="w-4 h-4"></i> Contact
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
+
     <footer class="bg-slate-950 text-slate-400 py-12 border-t border-slate-900">
         <div class="container mx-auto px-6">
             <div class="flex flex-col md:flex-row justify-between items-center">
                 <div class="mb-6 md:mb-0 text-center md:text-left">
-                    <div class="flex items-center justify-center md:justify-start gap-2 mb-2"><i data-lucide="fan"
-                            class="w-5 h-5 text-orange-600"></i><span
-                            class="text-lg font-bold text-slate-200">AutoExhaustFan</span></div>
-                    <p class="text-sm">Department of Electrical & Electronics Engineering,
-                        ALIET</p>
+                    <div class="flex items-center justify-center md:justify-start gap-2 mb-2">
+                        <i data-lucide="fan" class="w-5 h-5 text-orange-600"></i>
+                        <span class="text-lg font-bold text-slate-200">AutoExhaustFan</span>
+                    </div>
+                    <p class="text-sm">Department of Electrical & Electronics Engineering, ALIET</p>
                 </div>
                 <div class="text-sm text-center md:text-right">
-                    <p>&copy;
-                        2025 Automatic Exhaust Fan Project.</p>
+                    <p>&copy; 2025 Automatic Exhaust Fan Project.</p>
                     <p class="mt-1">All Rights Reserved.</p>
                 </div>
             </div>
         </div>
     </footer>
-    <script> // Initialize Lucide Icons
+
+    <script>
+        // Initialize Lucide Icons
         lucide.createIcons();
 
         // Navbar Scroll Effect
         const navbar = document.getElementById('navbar');
-
         window.addEventListener('scroll', () => {
             if (window.scrollY > 20) {
                 navbar.classList.add('shadow-md');
                 navbar.classList.replace('h-20', 'h-16');
-            }
-
-            else {
+            } else {
                 navbar.classList.remove('shadow-md');
                 navbar.classList.replace('h-16', 'h-20');
             }
@@ -644,7 +655,6 @@
         // Mobile Menu
         const menuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
-
         menuBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
@@ -655,7 +665,6 @@
 
         tabBtns.forEach(btn => {
             btn.addEventListener('click', () => {
-
                 // Remove active class from all buttons
                 tabBtns.forEach(b => {
                     b.classList.remove('active', 'bg-white', 'shadow-sm', 'text-orange-600');
