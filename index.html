@@ -67,6 +67,7 @@
 
         .gradient-text {
             background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%);
+            background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -323,6 +324,35 @@
                         </div>
                         <h3 class="text-xl font-bold text-white mb-2">Ventilation</h3>
                         <p class="text-slate-400 text-sm px-4">Fan clears fumes, restoring safe air quality.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Exploded System Visualization (SLEPS) -->
+        <section id="visualization" class="py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12 max-w-4xl mx-auto">
+                    <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">Prototype Breakdown</h2>
+                    <p class="text-slate-600 text-lg leading-relaxed">
+                        It demonstrates the internal architecture of the Auto Exhaust Fan system by
+                        smoothly transitioning between assembled and exploded states for clear component-level
+                        understanding.
+                    </p>
+                </div>
+
+                <div class="max-w-2xl mx-auto">
+                    <!-- Video Container -->
+                    <div
+                        class="relative w-full aspect-square bg-slate-50 rounded-2xl overflow-hidden border border-slate-200 shadow-xl shadow-slate-200/50 flex items-center justify-center">
+                        <canvas id="exploded-view-canvas" class="w-full h-full object-contain"></canvas>
+                        <!-- Loading Indicator -->
+                        <div id="canvas-loader"
+                            class="absolute inset-0 flex items-center justify-center bg-slate-50 z-10 transition-opacity duration-500">
+                            <div
+                                class="w-8 h-8 rounded-full border-4 border-orange-200 border-t-orange-600 animate-spin">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -685,7 +715,112 @@
         });
 
         // Set initial active tab style
-        document.querySelector('.tab-btn.active').classList.add('bg-white', 'shadow-sm', 'text-orange-600');
+        if (document.querySelector('.tab-btn.active')) {
+            document.querySelector('.tab-btn.active').classList.add('bg-white', 'shadow-sm', 'text-orange-600');
+        }
+
+        // Exploded View Canvas Animation
+        document.addEventListener('DOMContentLoaded', () => {
+            const canvas = document.getElementById('exploded-view-canvas');
+            if (!canvas) return;
+
+            const ctx = canvas.getContext('2d');
+            const totalFrames = 240;
+            const folderPath = 'auto%20exhaust%20fan%20frames';
+            const images = [];
+            const frameRate = 30; // fps
+            let currentFrame = 1;
+            let isPlaying = false;
+            let imagesLoaded = 0;
+
+            // Set internal canvas resolution
+            canvas.width = 1080;
+            canvas.height = 1080;
+
+            // Preload images logic
+            const preloadImages = () => {
+                for (let i = 1; i <= totalFrames; i++) {
+                    const img = new Image();
+                    const filename = `ezgif-frame-${String(i).padStart(3, '0')}.jpg`;
+                    img.src = `${folderPath}/${filename}`;
+                    img.onload = () => {
+                        imagesLoaded++;
+                        // Hide loader when enough frames are loaded (e.g., 20) to start playback smoothness
+                        if (imagesLoaded === 20) {
+                            const loader = document.getElementById('canvas-loader');
+                            if (loader) loader.classList.add('opacity-0', 'pointer-events-none');
+                        }
+                    };
+                    img.onerror = () => {
+                        console.error(`Failed to load frame: ${filename}`);
+                        imagesLoaded++; // Count it anyway to avoid stalling
+                    };
+                    images[i] = img;
+                }
+            };
+
+            // Draw frame
+            const drawFrame = (frameIndex) => {
+                const img = images[frameIndex];
+                if (img && img.complete && img.naturalWidth !== 0) {
+                    // Clear canvas
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                    // Calculate scale to "cover"
+                    const hRatio = canvas.width / img.width;
+                    const vRatio = canvas.height / img.height;
+                    const ratio = Math.max(hRatio, vRatio);
+
+                    const centerShift_x = (canvas.width - img.width * ratio) / 2;
+                    const centerShift_y = (canvas.height - img.height * ratio) / 2;
+
+                    ctx.drawImage(img, 0, 0, img.width, img.height,
+                        centerShift_x, centerShift_y, img.width * ratio, img.height * ratio);
+                }
+            };
+
+            // Animation Loop
+            let lastTime = 0;
+            const interval = 1000 / frameRate;
+
+            const animate = (timestamp) => {
+                if (!isPlaying) return;
+
+                requestAnimationFrame(animate);
+
+                const deltaTime = timestamp - lastTime;
+
+                if (deltaTime > interval) {
+                    drawFrame(currentFrame);
+
+                    currentFrame++;
+                    if (currentFrame > totalFrames) {
+                        currentFrame = 1;
+                    }
+
+                    lastTime = timestamp - (deltaTime % interval);
+                }
+            };
+
+            // Intersection Observer to start/stop and load
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        if (images.length === 0) {
+                            preloadImages();
+                        }
+                        isPlaying = true;
+                        requestAnimationFrame(animate);
+                    } else {
+                        isPlaying = false;
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            observer.observe(canvas);
+        });
     </script>
 </body>
 
