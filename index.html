@@ -908,6 +908,9 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // Initialize Lucide Icons for elements parsed after the main script
+            lucide.createIcons();
+
             const toggleBtn = document.getElementById('mani-toggle-btn');
             const closeBtn = document.getElementById('mani-close-btn');
             const chatWindow = document.getElementById('mani-chat-window');
